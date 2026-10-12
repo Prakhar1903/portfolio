@@ -545,18 +545,18 @@ function buildTerminal() {
 // TERMINAL ENGINE
 // ════════════════════════════════
 
-const WELCOME = `<span style="color:#00f5ff;font-size:0.73rem;line-height:1.2;display:block;">
+const WELCOME = `<pre style="color:#00f5ff;font-family:'JetBrains Mono',monospace;font-size:0.7rem;line-height:1.2;margin:0 0 6px 0;padding:0;white-space:pre;overflow-x:auto;">
 ██████╗ ███╗   ███╗      ██████╗ ███████╗
 ██╔══██╗████╗ ████║     ██╔═══██╗██╔════╝
 ██████╔╝██╔████╔██║     ██║   ██║███████╗
 ██╔═══╝ ██║╚██╔╝██║     ██║   ██║╚════██║
 ██║     ██║ ╚═╝ ██║     ╚██████╔╝███████║
-╚═╝     ╚═╝     ╚═╝      ╚═════╝ ╚══════╝
-</span><span class="t-dim">─────────────────────────────────────────────</span>
-<span class="t-info">PM-OS Portfolio Operating System v1.0.0</span>
-<span class="t-dim">Logged in as: </span><span class="t-white">prakhar</span>  <span class="t-dim">Host: </span><span class="t-white">LPU · B.Tech CSE</span>
-<span class="t-dim">─────────────────────────────────────────────</span>
-Type <span class="t-info">help</span> for available commands · <span class="t-info">neofetch</span> for system info
+╚═╝     ╚═╝     ╚═╝      ╚═════╝ ╚══════╝</pre>
+<div class="t-dim">─────────────────────────────────────────────</div>
+<div><span class="t-info">PM-OS Portfolio Operating System v1.0.0</span></div>
+<div><span class="t-dim">Logged in as: </span><span class="t-white">prakhar</span> &nbsp;<span class="t-dim">Host: </span><span class="t-white">LPU · B.Tech CSE</span></div>
+<div class="t-dim">─────────────────────────────────────────────</div>
+<div>Type <span class="t-info">help</span> for available commands · <span class="t-info">neofetch</span> for system info</div>
 `;
 
 function initTerminal() {
