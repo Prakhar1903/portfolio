@@ -364,7 +364,10 @@ function buildExperience() {
             <li>Delivered live KPI analytics dashboard with FastAPI, MongoDB &amp; JWT-based authentication</li>
           </ul>
         </div>
-        <div class="tl-stack">${tags(['ReactJS','Vite','FastAPI','Python','MongoDB','CrewAI','Recharts','JWT'])}</div>
+        <div class="tl-footer">
+          <div class="tl-stack">${tags(['ReactJS','Vite','FastAPI','Python','MongoDB','CrewAI','Recharts','JWT'])}</div>
+          <a class="tl-link" href="#" target="_blank" rel="noopener" title="View UpStride Internship Certificate">📜 Certificate ↗</a>
+        </div>
       </div>
 
       <div class="tl-item">
@@ -382,7 +385,10 @@ function buildExperience() {
             <li>Secure platform with JWT auth, one-click PDF/Excel exports &amp; interactive data visualizations</li>
           </ul>
         </div>
-        <div class="tl-stack">${tags(['React 18','Vite','Tailwind CSS','FastAPI','MongoDB','Pandas','Chart.js','Python'])}</div>
+        <div class="tl-footer">
+          <div class="tl-stack">${tags(['React 18','Vite','Tailwind CSS','FastAPI','MongoDB','Pandas','Chart.js','Python'])}</div>
+          <a class="tl-link" href="#" target="_blank" rel="noopener" title="View Infosys Internship Certificate">📜 Certificate ↗</a>
+        </div>
       </div>
 
       <div class="tl-item">
@@ -400,7 +406,10 @@ function buildExperience() {
             <li>Strengthened core JavaScript &amp; full-stack application development skills</li>
           </ul>
         </div>
-        <div class="tl-stack">${tags(['HTML','CSS','JavaScript','React','Node.js','Express','MongoDB'])}</div>
+        <div class="tl-footer">
+          <div class="tl-stack">${tags(['HTML','CSS','JavaScript','React','Node.js','Express','MongoDB'])}</div>
+          <a class="tl-link" href="#" target="_blank" rel="noopener" title="View WSA Internship Certificate">📜 Certificate ↗</a>
+        </div>
       </div>
 
     </div>`;
@@ -464,13 +473,16 @@ function buildEducation() {
 }
 
 function buildAchievements() {
-  const item = (icon, title, sub, date) => `
+  const item = (icon, title, sub, date, linkText, linkUrl) => `
     <div class="ach-item">
       <div class="ach-icon">${icon}</div>
-      <div>
+      <div style="flex:1;">
         <div class="ach-title">${title}</div>
         <div class="ach-sub">${sub}</div>
-        <div class="ach-date">${date}</div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-top:6px;">
+          <div class="ach-date">${date}</div>
+          ${linkUrl ? `<a class="ach-link" href="${linkUrl}" target="_blank" rel="noopener">${linkText || 'View Link ↗'}</a>` : ''}
+        </div>
       </div>
     </div>`;
   return `
@@ -478,8 +490,16 @@ function buildAchievements() {
     ${item('💻', '250+ DSA Problems Solved', 'Solved across LeetCode, GeeksforGeeks, and HackerRank — demonstrating strong analytical and competitive programming skills.', 'Aug 2024 – Present')}
     ${item('🏅', 'Finalist — Fynd Hacktimus 2025 Hackathon', 'Selected among top students for innovative problem-solving and technical excellence.', 'Dec 2025')}
     ${item('⭐', 'HackerRank 5-Star in C++ &amp; Java', '5-Star rating in C++ and Java · 3-Star rating in Problem Solving, showcasing strong DSA expertise.', 'Oct 2025')}
-    ${item('🕹️', 'Code-A-Haunt Hackathon', 'Participated in a 24-hour hackathon.', 'Mar 2024')}
-    ${item('🎮', 'Byte-Bash Hackathon', 'Participated in a 36-hour hackathon.', 'Nov 2023')}`;
+    ${item('🕹️', 'Code-A-Haunt 24-hour Hackathon', 'Participated in a 24-hour hackathon demonstrating rapid prototyping.', 'Mar 2024', '🔗 Hackathon Link ↗', '#')}
+    ${item('🎮', 'Byte-Bash 36-hour Hackathon', 'Participated in a 36-hour team hackathon.', 'Nov 2023')}
+
+    <div class="section-hdr" style="margin-top:24px;">Training &amp; Certifications</div>
+    ${item('🤖', 'W3grads – Full Stack (MERN) with Gen AI', 'Built dynamic full-stack web apps using MERN, focusing on RESTful APIs and Gen AI integration.', 'Jun 2025 – Jul 2025', '📜 View Certificate ↗', '#')}
+    ${item('📜', 'Developing Front End Apps with React', 'IBM / Coursera certification in modern React application development.', 'Oct 2025', '📜 View Certificate ↗', '#')}
+    ${item('📜', 'Introduction to Web Development with HTML5, CSS3 &amp; JS', 'Core web standards and modern frontend foundation.', 'Oct 2025', '📜 View Certificate ↗', '#')}
+    ${item('☁️', 'NPTEL — Cloud Computing', 'Comprehensive foundational cloud computing principles and architecture.', 'May 2025', '📜 View Certificate ↗', '#')}
+    ${item('☕', 'Java Programming', 'Object-Oriented Programming and advanced Java development concepts.', 'May 2025', '📜 View Certificate ↗', '#')}
+    ${item('🧠', 'Data Structures and Algorithms', 'Advanced algorithm design, time/space complexity analysis.', 'May 2025', '📜 View Certificate ↗', '#')}`;
 }
 
 function buildContact() {

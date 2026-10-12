@@ -617,11 +617,55 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
   background: rgba(168,85,247,0.07);
   border: 1px solid rgba(168,85,247,0.2);
   color: var(--accent2);
+.tl-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.tl-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid rgba(0, 245, 255, 0.28);
+  background: rgba(0, 245, 255, 0.05);
+  color: var(--accent);
+}
+.tl-link:hover {
+  background: rgba(0, 245, 255, 0.15);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.25);
+  transform: translateY(-1px);
+}
+.ach-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-decoration: none;
+  color: var(--accent);
+  border: 1px solid rgba(0, 245, 255, 0.22);
+  background: rgba(0, 245, 255, 0.04);
+  transition: all 0.18s;
+}
+.ach-link:hover {
+  background: rgba(0, 245, 255, 0.12);
+  border-color: var(--accent);
+  transform: translateX(2px);
 }
 
-/* ════════════════════════════════
-   PROJECTS WINDOW
-════════════════════════════════ */
 .proj-grid { display:flex; flex-direction:column; gap:16px; }
 .proj-card {
   padding: 18px;
