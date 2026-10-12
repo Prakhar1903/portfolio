@@ -284,8 +284,8 @@ function buildAbout() {
       <a class="about-link" href="https://linkedin.com/in/prakharm1903" target="_blank" rel="noopener">
         <span class="link-icon">🔗</span><span>linkedin.com/in/prakharm1903</span>
       </a>
-      <a class="about-link" href="https://github.com/prakharm1903" target="_blank" rel="noopener">
-        <span class="link-icon">⚡</span><span>github.com/prakharm1903</span>
+      <a class="about-link" href="https://github.com/Prakhar1903" target="_blank" rel="noopener">
+        <span class="link-icon">⚡</span><span>github.com/Prakhar1903</span>
       </a>
       <a class="about-link" href="tel:+917869691849">
         <span class="link-icon">📱</span><span>+91 7869691849</span>
@@ -314,7 +314,7 @@ function buildProjects() {
         <div class="proj-footer">
           <div class="proj-stack">${tags(['ReactJS','NodeJS','Express','MongoDB','TailwindCSS','TensorFlow.js','Socket.io'])}</div>
           <div class="proj-links">
-            <a class="proj-link gh" href="https://github.com/prakharm1903" target="_blank" rel="noopener">⚡ GitHub</a>
+            <a class="proj-link gh" href="https://github.com/Prakhar1903" target="_blank" rel="noopener">⚡ GitHub</a>
             <a class="proj-link live" href="#" target="_blank" rel="noopener">🌐 Live</a>
           </div>
         </div>
@@ -336,7 +336,7 @@ function buildProjects() {
         <div class="proj-footer">
           <div class="proj-stack">${tags(['ReactJS','NodeJS','Express','MongoDB','Bootstrap','JavaScript'])}</div>
           <div class="proj-links">
-            <a class="proj-link gh" href="https://github.com/prakharm1903" target="_blank" rel="noopener">⚡ GitHub</a>
+            <a class="proj-link gh" href="https://github.com/Prakhar1903" target="_blank" rel="noopener">⚡ GitHub</a>
           </div>
         </div>
       </div>
@@ -366,7 +366,7 @@ function buildExperience() {
         </div>
         <div class="tl-footer">
           <div class="tl-stack">${tags(['ReactJS','Vite','FastAPI','Python','MongoDB','CrewAI','Recharts','JWT'])}</div>
-          <a class="tl-link" href="#" target="_blank" rel="noopener" title="View UpStride Internship Certificate">📜 Certificate ↗</a>
+          <a class="tl-link" href="https://drive.google.com/file/d/1bq5zw9V4U_CzvmvkMqb3yx-un6iTfN-W/view" target="_blank" rel="noopener" title="View UpStride Internship Certificate">📜 Certificate ↗</a>
         </div>
       </div>
 
@@ -387,7 +387,7 @@ function buildExperience() {
         </div>
         <div class="tl-footer">
           <div class="tl-stack">${tags(['React 18','Vite','Tailwind CSS','FastAPI','MongoDB','Pandas','Chart.js','Python'])}</div>
-          <a class="tl-link" href="#" target="_blank" rel="noopener" title="View Infosys Internship Certificate">📜 Certificate ↗</a>
+          <a class="tl-link" href="https://drive.google.com/file/d/1OHF3FJid3omie9fvsmNclrCpMvkwEEDl/view" target="_blank" rel="noopener" title="View Infosys Internship Certificate">📜 Certificate ↗</a>
         </div>
       </div>
 
@@ -408,7 +408,7 @@ function buildExperience() {
         </div>
         <div class="tl-footer">
           <div class="tl-stack">${tags(['HTML','CSS','JavaScript','React','Node.js','Express','MongoDB'])}</div>
-          <a class="tl-link" href="#" target="_blank" rel="noopener" title="View WSA Internship Certificate">📜 Certificate ↗</a>
+          <a class="tl-link" href="https://drive.google.com/file/d/1xyRsRWPFbvVTC5f9AUaQ7oIkEZOoHYBb/view" target="_blank" rel="noopener" title="View WSA Internship Certificate">📜 Certificate ↗</a>
         </div>
       </div>
 
@@ -518,9 +518,9 @@ function buildContact() {
         <span class="c-link-icon">🔗</span>
         <div><div class="c-link-label">linkedin.com/in/prakharm1903</div><div class="c-link-sub">LinkedIn — connect professionally</div></div>
       </a>
-      <a class="c-link gh" href="https://github.com/prakharm1903" target="_blank" rel="noopener">
+      <a class="c-link gh" href="https://github.com/Prakhar1903" target="_blank" rel="noopener">
         <span class="c-link-icon">⚡</span>
-        <div><div class="c-link-label">github.com/prakharm1903</div><div class="c-link-sub">GitHub — explore my code</div></div>
+        <div><div class="c-link-label">github.com/Prakhar1903</div><div class="c-link-sub">GitHub — explore my code</div></div>
       </a>
       <a class="c-link phone" href="tel:+917869691849">
         <span class="c-link-icon">📱</span>
@@ -638,7 +638,7 @@ Apps: <span class="t-info">about</span> · <span class="t-info">projects</span> 
 <span class="t-dim">────────────────────────────────────────────</span>
   📧  prakharm1903@gmail.com
   🔗  linkedin.com/in/prakharm1903
-  ⚡  github.com/prakharm1903`);
+  ⚡  github.com/Prakhar1903`);
       break;
 
     case 'neofetch':
@@ -703,7 +703,7 @@ Summary:
 <span class="t-info"># contact.txt</span>
 Email:    prakharm1903@gmail.com
 LinkedIn: linkedin.com/in/prakharm1903
-GitHub:   github.com/prakharm1903
+GitHub:   github.com/Prakhar1903
 Phone:    +91 7869691849
 Status:   🟢 Open to opportunities`);
       } else if (f === 'skills.txt') {
