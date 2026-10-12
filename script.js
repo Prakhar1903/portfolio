@@ -314,8 +314,8 @@ function buildProjects() {
         <div class="proj-footer">
           <div class="proj-stack">${tags(['ReactJS','NodeJS','Express','MongoDB','TailwindCSS','TensorFlow.js','Socket.io'])}</div>
           <div class="proj-links">
-            <a class="proj-link gh" href="https://github.com/Prakhar1903" target="_blank" rel="noopener">⚡ GitHub</a>
-            <a class="proj-link live" href="#" target="_blank" rel="noopener">🌐 Live</a>
+            <a class="proj-link gh" href="https://github.com/Prakhar1903/KrishiGyan" target="_blank" rel="noopener">⚡ GitHub</a>
+            <a class="proj-link live" href="https://krishi-gyan-five.vercel.app/" target="_blank" rel="noopener">🌐 Live Demo</a>
           </div>
         </div>
       </div>
@@ -336,7 +336,7 @@ function buildProjects() {
         <div class="proj-footer">
           <div class="proj-stack">${tags(['ReactJS','NodeJS','Express','MongoDB','Bootstrap','JavaScript'])}</div>
           <div class="proj-links">
-            <a class="proj-link gh" href="https://github.com/Prakhar1903" target="_blank" rel="noopener">⚡ GitHub</a>
+            <a class="proj-link gh" href="https://github.com/Prakhar1903/MOCKNETO" target="_blank" rel="noopener">⚡ GitHub</a>
           </div>
         </div>
       </div>
