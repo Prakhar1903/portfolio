@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM-OS | Prakhar Mishra Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════════ BOOT SCREEN ══════════════ -->
+<div id="boot-screen">
+  <div class="boot-inner">
+    <div class="boot-logo">
+      <span class="logo-pm">PM</span><span class="logo-os">-OS</span>
+    </div>
+    <p class="boot-tagline">Portfolio Operating System</p>
+    <div class="boot-log-box" id="boot-log"></div>
+    <div class="boot-bar-wrap">
+      <div class="boot-bar" id="boot-bar"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ DESKTOP ══════════════ -->
+<div id="desktop" style="display:none;">
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Hint overlay (fades after a few sec) -->
+  <div id="hint-overlay">
+    <div class="hint-box">
+      <span>💡</span> Double-click icons to open &nbsp;|&nbsp; Right-click desktop for menu &nbsp;|&nbsp; Type <code>help</code> in Terminal
+    </div>
+  </div>
+
+  <!-- Corner widget -->
+  <div id="corner-widget">
+    <div id="corner-time">00:00</div>
+    <div id="corner-date">Mon, Jan 01</div>
+    <div id="corner-status"><span class="dot-green"></span>Open to Work</div>
+  </div>
+
+  <!-- Desktop Icons -->
+  <div id="icon-grid">
+    <div class="d-icon" ondblclick="openApp('about')" onclick="selectIcon(this)">
+      <div class="d-icon-img">👤</div>
+      <div class="d-icon-name">About.exe</div>
+    </div>
+    <div class="d-icon" ondblclick="openApp('projects')" onclick="selectIcon(this)">
+      <div class="d-icon-img">🗂️</div>
+      <div class="d-icon-name">Projects/</div>
+    </div>
+    <div class="d-icon" ondblclick="openApp('experience')" onclick="selectIcon(this)">
+      <div class="d-icon-img">💼</div>
+      <div class="d-icon-name">Experience/</div>
+    </div>
+    <div class="d-icon" ondblclick="openApp('skills')" onclick="selectIcon(this)">
+      <div class="d-icon-img">⚡</div>
+      <div class="d-icon-name">Skills.json</div>
+    </div>
+    <div class="d-icon" ondblclick="openApp('education')" onclick="selectIcon(this)">
+      <div class="d-icon-img">🎓</div>
+      <div class="d-icon-name">Education.log</div>
+    </div>
+    <div class="d-icon" ondblclick="openApp('achievements')" onclick="selectIcon(this)">
+      <div class="d-icon-img">🏆</div>
+      <div class="d-icon-name">Awards/</div>
+    </div>
+    <div class="d-icon" ondblclick="openApp('contact')" onclick="selectIcon(this)">
+      <div class="d-icon-img">📡</div>
+      <div class="d-icon-name">Contact.sh</div>
+    </div>
+    <div class="d-icon" ondblclick="openApp('terminal')" onclick="selectIcon(this)">
+      <div class="d-icon-img">⌨️</div>
+      <div class="d-icon-name">Terminal</div>
+    </div>
+  </div>
+
+  <!-- Window Layer -->
+  <div id="win-layer"></div>
+
+  <!-- Taskbar -->
+  <div id="taskbar">
+    <div id="tb-left">
+      <button class="tb-start" onclick="openApp('terminal')">⚡ PM-OS</button>
+    </div>
+    <div id="tb-apps"></div>
+    <div id="tb-right">
+      <div id="tb-time">00:00</div>
+      <div id="tb-date"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Right-click context menu -->
+<div id="ctx-menu" style="display:none;">
+  <div class="ctx-item" onclick="openApp('terminal')">⌨️&nbsp; Open Terminal</div>
+  <div class="ctx-item" onclick="openApp('about')">👤&nbsp; Open About</div>
+  <div class="ctx-item" onclick="openApp('projects')">🗂️&nbsp; Open Projects</div>
+  <hr class="ctx-sep">
+  <div class="ctx-item" onclick="closeAllWins()">✕&nbsp; Close All Windows</div>
+</div>
+
+<!-- Mobile Notice -->
+<div id="mobile-notice">
+  <div class="mob-box">
+    <div class="mob-logo">PM-OS</div>
+    <p>This portfolio is best viewed on a <strong>desktop or laptop</strong> — it's a full OS experience!</p>
+    <p style="margin-top:10px; font-size:0.8rem; color:#64748b;">Rotate to landscape or open on a larger screen for the best experience.</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
