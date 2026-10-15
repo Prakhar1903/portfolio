@@ -306,13 +306,13 @@ function buildProjects() {
         <div class="proj-desc">
           AI-Powered Agricultural Management Platform enabling farmers to access real-time agricultural data.
           <ul>
-            <li>Real-time market prices &amp; AI-powered crop recommendations</li>
-            <li>Pest detection via TensorFlow.js &amp; multi-language support</li>
-            <li>Responsive, performance-optimized experience for diverse users</li>
+            <li>Real-time market prices, personalized crop recommendations &amp; AI-powered farming chatbot</li>
+            <li>Pest detection via TensorFlow.js &amp; multi-language support for diverse users</li>
+            <li>Delivered a responsive, secure, and performance-optimized experience across devices</li>
           </ul>
         </div>
         <div class="proj-footer">
-          <div class="proj-stack">${tags(['ReactJS','NodeJS','Express','MongoDB','TailwindCSS','TensorFlow.js','Socket.io'])}</div>
+          <div class="proj-stack">${tags(['ReactJS','JavaScript','NodeJS','Express','MongoDB','TailwindCSS','TensorFlow.js','Socket.io'])}</div>
           <div class="proj-links">
             <a class="proj-link gh" href="https://github.com/Prakhar1903/KrishiGyan" target="_blank" rel="noopener">⚡ GitHub</a>
             <a class="proj-link live" href="https://krishi-gyan-five.vercel.app/" target="_blank" rel="noopener">🌐 Live Demo</a>
@@ -330,13 +330,121 @@ function buildProjects() {
           <ul>
             <li>Real-time voice interaction &amp; smart AI evaluation engine</li>
             <li>Progress tracking dashboard &amp; AI-generated feedback reports</li>
-            <li>Responsive, interactive experience across all devices</li>
+            <li>Responsive, interactive, and performance-optimized experience across devices</li>
           </ul>
         </div>
         <div class="proj-footer">
-          <div class="proj-stack">${tags(['ReactJS','NodeJS','Express','MongoDB','Bootstrap','JavaScript'])}</div>
+          <div class="proj-stack">${tags(['ReactJS','JavaScript','NodeJS','Express','Bootstrap','MongoDB'])}</div>
           <div class="proj-links">
             <a class="proj-link gh" href="https://github.com/Prakhar1903/MOCKNETO" target="_blank" rel="noopener">⚡ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-name">🏋️ VirtuGym</div>
+          <div class="proj-date">May '26 – Jun '26</div>
+        </div>
+        <div class="proj-desc">
+          Full-Stack Virtual Fitness Management &amp; Training Platform connecting trainees, trainers, and administrators.
+          <ul>
+            <li>Role-based dashboards (Trainee, Trainer, Admin) with comprehensive workout &amp; activity tracking</li>
+            <li>Real-time trainer session booking, custom session notes &amp; integrated payment workflows</li>
+            <li>Dynamic exercise repositories, progress analytics, and interactive video call integration</li>
+          </ul>
+        </div>
+        <div class="proj-footer">
+          <div class="proj-stack">${tags(['Laravel','PHP','MySQL','MongoDB','Blade','TailwindCSS','JavaScript','Docker'])}</div>
+          <div class="proj-links">
+            <a class="proj-link gh" href="https://github.com/Prakhar1903/Virtugym" target="_blank" rel="noopener">⚡ GitHub</a>
+            <a class="proj-link live" href="https://virtugym.onrender.com/" target="_blank" rel="noopener">🌐 Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-name">🏛️ CivicResolver</div>
+          <div class="proj-date">May '26 – Jun '26</div>
+        </div>
+        <div class="proj-desc">
+          Full-Stack Citizen Grievance Redressal &amp; Complaint Management Portal with web and Android clients.
+          <ul>
+            <li>Geo-located complaint filing with interactive Leaflet mapping &amp; Cloudinary media proof uploads</li>
+            <li>Real-time citizen-to-admin live messaging &amp; grievance resolution powered by Socket.IO</li>
+            <li>Native Android mobile client developed with Kotlin &amp; Jetpack Compose using Retrofit &amp; Location Services</li>
+          </ul>
+        </div>
+        <div class="proj-footer">
+          <div class="proj-stack">${tags(['ReactJS','TailwindCSS','NodeJS','Express','MongoDB','Socket.io','Kotlin','Jetpack Compose'])}</div>
+          <div class="proj-links">
+            <a class="proj-link gh" href="https://github.com/Prakhar1903/CivicResolver" target="_blank" rel="noopener">⚡ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-name">☁️ Scalle (Route 53 Console)</div>
+          <div class="proj-date">Aug '25 – Sep '25</div>
+        </div>
+        <div class="proj-desc">
+          High-Performance Cloud DNS Management Console &amp; Authentic AWS Route 53 Clone.
+          <ul>
+            <li>Pixel-perfect AWS console interface with complete Hosted Zones and DNS record CRUD (A, AAAA, CNAME, TXT, MX, NS, SRV, SOA)</li>
+            <li>Advanced DNS routing policy engine supporting Simple, Weighted, Latency, Failover &amp; Geolocation policies</li>
+            <li>JWT-authenticated session security with HTTP-only cookies and ultra-fast persistence via SQLite &amp; SQLAlchemy</li>
+          </ul>
+        </div>
+        <div class="proj-footer">
+          <div class="proj-stack">${tags(['Next.js 14','TypeScript','FastAPI','Python','SQLite','SQLAlchemy','Zustand','CSS Modules'])}</div>
+          <div class="proj-links">
+            <a class="proj-link gh" href="https://github.com/Prakhar1903/scalle" target="_blank" rel="noopener">⚡ GitHub</a>
+            <a class="proj-link live" href="https://scalle.vercel.app" target="_blank" rel="noopener">🌐 Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-name">🤖 WeTano Engage AI</div>
+          <div class="proj-date">Apr '26 – Jun '26</div>
+        </div>
+        <div class="proj-desc">
+          AI-Powered Customer Engagement Platform enabling businesses to automate web chatbots with a customized portal.
+          <ul>
+            <li>Customizable chatbot deployment allowing businesses to monitor and manage customer interactions from a unified dashboard</li>
+            <li>Multi-agent AI layer using CrewAI with specialized agents for support, lead qualification, and real-time sentiment analysis</li>
+            <li>Comprehensive analytics dashboard with live KPI tracking, FastAPI backend, MongoDB, and JWT authentication</li>
+          </ul>
+        </div>
+        <div class="proj-footer">
+          <div class="proj-stack">${tags(['ReactJS','Vite','FastAPI','Python','MongoDB','CrewAI','Recharts','JWT'])}</div>
+          <div class="proj-links">
+            <a class="proj-link gh" href="https://github.com/Prakhar1903/6-WeTano-Engage-AI-Fork" target="_blank" rel="noopener">⚡ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-name">📈 Market Trend Forecaster</div>
+          <div class="proj-date">Feb '26 – Apr '26</div>
+        </div>
+        <div class="proj-desc">
+          Full-Stack Market Intelligence Dashboard for real-time consumer sentiment analysis and trend forecasting.
+          <ul>
+            <li>Multi-channel sentiment analysis across Amazon, YouTube, News, and Web sources for smart speaker brands</li>
+            <li>Sentiment War Room with brand health metrics, predictive forecasting, keyword explorer &amp; AI chat assistant</li>
+            <li>Secure platform with JWT authentication, one-click PDF/Excel report exports, and interactive data visualizations</li>
+          </ul>
+        </div>
+        <div class="proj-footer">
+          <div class="proj-stack">${tags(['ReactJS','Vite','TailwindCSS','FastAPI','Python','MongoDB','Pandas','Chart.js'])}</div>
+          <div class="proj-links">
+            <a class="proj-link gh" href="https://github.com/Prakhar1903/Market-trend-forecaster" target="_blank" rel="noopener">⚡ GitHub</a>
+            <a class="proj-link live" href="https://market-trend-forecaster-da9g.onrender.com" target="_blank" rel="noopener">🌐 Live Demo</a>
           </div>
         </div>
       </div>
@@ -674,7 +782,7 @@ Apps: <span class="t-info">about</span> · <span class="t-info">projects</span> 
     case 'ls':
       tLine(out, `
 <span class="t-info">drwxr-xr-x</span>  <span class="t-white">About.exe      </span><span class="t-dim">Full-stack Dev · AI Enthusiast</span>
-<span class="t-info">drwxr-xr-x</span>  <span class="t-white">Projects/      </span><span class="t-dim">KrishiGyan · Mockneto</span>
+<span class="t-info">drwxr-xr-x</span>  <span class="t-white">Projects/      </span><span class="t-dim">KrishiGyan · Mockneto · VirtuGym · CivicResolver · Scalle · WeTano · MarketTrend</span>
 <span class="t-info">drwxr-xr-x</span>  <span class="t-white">Experience/    </span><span class="t-dim">UpStride · Infosys · WSA</span>
 <span class="t-info">-rw-r--r--</span>  <span class="t-white">Skills.json    </span><span class="t-dim">Java, C++, React, Node, FastAPI...</span>
 <span class="t-info">-rw-r--r--</span>  <span class="t-white">Education.log  </span><span class="t-dim">LPU B.Tech CSE · CGPA 8.12</span>
@@ -714,8 +822,18 @@ Frameworks:  ReactJS, NodeJS, Express, Bootstrap, TailwindCSS
 Tools:       MySQL, MongoDB, Git, GitHub, Figma, Postman, Vercel
 CS Core:     DBMS, OS, CN, SQL, OOPs
 Soft Skills: Leadership, Problem-Solving, Adaptability, Quick Learner`);
+      } else if (f === 'projects.txt') {
+        tLine(out, `
+<span class="t-info"># projects.txt</span>
+1. KrishiGyan      - AI Agriculture Management Platform (React, Node, TensorFlow.js)
+2. Mockneto        - AI Interview Simulator (React, Node, Express, MongoDB)
+3. VirtuGym        - Full-Stack Fitness Management Platform (Laravel, PHP, MySQL)
+4. CivicResolver   - Grievance Portal & Native Android App (React, Node, Kotlin)
+5. Scalle          - AWS Route 53 Cloud DNS Console Clone (Next.js 14, FastAPI)
+6. WeTano          - AI Multi-Agent Chatbot Automation Platform (React, FastAPI, CrewAI)
+7. Market Trend    - Sentiment Forecaster (FastAPI, React, MongoDB Atlas)`);
       } else {
-        tLine(out, `<span class="t-err">cat: ${esc(args[0] || '(no file)')}: No such file</span><br><span class="t-dim">Try: about.txt · contact.txt · skills.txt</span>`);
+        tLine(out, `<span class="t-err">cat: ${esc(args[0] || '(no file)')}: No such file</span><br><span class="t-dim">Try: about.txt · contact.txt · skills.txt · projects.txt</span>`);
       }
       break;
     }

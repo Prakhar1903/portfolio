@@ -17,13 +17,13 @@
   - `whoami` — Bio and highlights
   - `neofetch` — ASCII art & system specs
   - `ls` — List desktop files
-  - `cat <file>` — Read files (`about.txt`, `contact.txt`, `skills.txt`)
+  - `cat <file>` — Read files (`about.txt`, `contact.txt`, `skills.txt`, `projects.txt`)
   - `open <app>` — Launch any window from terminal
   - `clear`, `history`, `date`, `echo`
 - 🌌 **Cosmic Canvas Particle Background**: Animated starfield particles and subtle grid overlay powered by HTML5 Canvas.
 - 📂 **Dedicated Window Applications**:
   - `About.exe` — Profile, bio, and direct links
-  - `Projects/` — KrishiGyan, Mockneto with stack badges and links
+  - `Projects/` — KrishiGyan, Mockneto, VirtuGym, CivicResolver, Scalle, WeTano Engage AI, Market Trend Forecaster
   - `Experience/` — Timeline of internships (UpStride, Infosys, Webstack Academy)
   - `Skills.json` — Categorized skill badges (Languages, Frameworks, Tools, Core CS)
   - `Education.log` — Academic history (Lovely Professional University & Kendriya Vidyalaya)
