@@ -444,7 +444,7 @@ function buildProjects() {
           <div class="proj-stack">${tags(['ReactJS','Vite','TailwindCSS','FastAPI','Python','MongoDB','Pandas','Chart.js'])}</div>
           <div class="proj-links">
             <a class="proj-link gh" href="https://github.com/Prakhar1903/Market-trend-forecaster" target="_blank" rel="noopener">⚡ GitHub</a>
-            <a class="proj-link live" href="https://market-trend-forecaster-da9g.onrender.com" target="_blank" rel="noopener">🌐 Live Demo</a>
+            <a class="proj-link live" href="https://market-trend-forecaster-kappa.vercel.app/" target="_blank" rel="noopener">🌐 Live Demo</a>
           </div>
         </div>
       </div>
