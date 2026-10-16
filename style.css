@@ -626,6 +626,12 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
   gap: 8px;
   margin-top: 10px;
 }
+.tl-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
 .tl-link {
   display: inline-flex;
   align-items: center;

@@ -405,49 +405,6 @@ function buildProjects() {
           </div>
         </div>
       </div>
-
-      <div class="proj-card">
-        <div class="proj-header">
-          <div class="proj-name">🤖 WeTano Engage AI</div>
-          <div class="proj-date">Apr '26 – Jun '26</div>
-        </div>
-        <div class="proj-desc">
-          AI-Powered Customer Engagement Platform enabling businesses to automate web chatbots with a customized portal.
-          <ul>
-            <li>Customizable chatbot deployment allowing businesses to monitor and manage customer interactions from a unified dashboard</li>
-            <li>Multi-agent AI layer using CrewAI with specialized agents for support, lead qualification, and real-time sentiment analysis</li>
-            <li>Comprehensive analytics dashboard with live KPI tracking, FastAPI backend, MongoDB, and JWT authentication</li>
-          </ul>
-        </div>
-        <div class="proj-footer">
-          <div class="proj-stack">${tags(['ReactJS','Vite','FastAPI','Python','MongoDB','CrewAI','Recharts','JWT'])}</div>
-          <div class="proj-links">
-            <a class="proj-link gh" href="https://github.com/Prakhar1903/6-WeTano-Engage-AI-Fork" target="_blank" rel="noopener">⚡ GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-header">
-          <div class="proj-name">📈 Market Trend Forecaster</div>
-          <div class="proj-date">Feb '26 – Apr '26</div>
-        </div>
-        <div class="proj-desc">
-          Full-Stack Market Intelligence Dashboard for real-time consumer sentiment analysis and trend forecasting.
-          <ul>
-            <li>Multi-channel sentiment analysis across Amazon, YouTube, News, and Web sources for smart speaker brands</li>
-            <li>Sentiment War Room with brand health metrics, predictive forecasting, keyword explorer &amp; AI chat assistant</li>
-            <li>Secure platform with JWT authentication, one-click PDF/Excel report exports, and interactive data visualizations</li>
-          </ul>
-        </div>
-        <div class="proj-footer">
-          <div class="proj-stack">${tags(['ReactJS','Vite','TailwindCSS','FastAPI','Python','MongoDB','Pandas','Chart.js'])}</div>
-          <div class="proj-links">
-            <a class="proj-link gh" href="https://github.com/Prakhar1903/Market-trend-forecaster" target="_blank" rel="noopener">⚡ GitHub</a>
-            <a class="proj-link live" href="https://market-trend-forecaster-kappa.vercel.app/" target="_blank" rel="noopener">🌐 Live Demo</a>
-          </div>
-        </div>
-      </div>
     </div>`;
 }
 
@@ -460,21 +417,24 @@ function buildExperience() {
       <div class="tl-item">
         <div class="tl-header">
           <div>
-            <div class="tl-role">AI Web Chatbot Automation</div>
+            <div class="tl-role">AI Web Chatbot Automation (Engage AI)</div>
             <div class="tl-company">UpStride</div>
           </div>
           <div class="tl-date">Apr '26 – Jun '26</div>
         </div>
         <div class="tl-desc">
           <ul>
-            <li>Designed &amp; built a full-stack AI customer engagement platform with unified real-time dashboard</li>
-            <li>Built multi-agent AI layer (CrewAI) — support, lead qualification, analytics &amp; intent detection</li>
+            <li>Designed &amp; built a full-stack AI customer engagement platform enabling businesses to deploy custom chatbots and manage interactions from a unified dashboard</li>
+            <li>Built multi-agent AI layer using CrewAI with specialized agents for support, lead qualification, and real-time sentiment analysis</li>
             <li>Delivered live KPI analytics dashboard with FastAPI, MongoDB &amp; JWT-based authentication</li>
           </ul>
         </div>
         <div class="tl-footer">
           <div class="tl-stack">${tags(['ReactJS','Vite','FastAPI','Python','MongoDB','CrewAI','Recharts','JWT'])}</div>
-          <a class="tl-link" href="https://drive.google.com/file/d/1bq5zw9V4U_CzvmvkMqb3yx-un6iTfN-W/view" target="_blank" rel="noopener" title="View UpStride Internship Certificate">📜 Certificate ↗</a>
+          <div class="tl-links">
+            <a class="tl-link" href="https://github.com/Prakhar1903/6-WeTano-Engage-AI-Fork" target="_blank" rel="noopener" title="GitHub Repository">⚡ GitHub ↗</a>
+            <a class="tl-link" href="https://drive.google.com/file/d/1bq5zw9V4U_CzvmvkMqb3yx-un6iTfN-W/view" target="_blank" rel="noopener" title="View UpStride Internship Certificate">📜 Certificate ↗</a>
+          </div>
         </div>
       </div>
 
@@ -488,14 +448,18 @@ function buildExperience() {
         </div>
         <div class="tl-desc">
           <ul>
-            <li>Built market intelligence dashboard for real-time consumer sentiment analysis (Amazon, YouTube, News)</li>
-            <li>Implemented Sentiment War Room, predictive trend forecasting &amp; AI chatbot for market analysis</li>
-            <li>Secure platform with JWT auth, one-click PDF/Excel exports &amp; interactive data visualizations</li>
+            <li>Designed and developed a full-stack market intelligence dashboard for real-time consumer sentiment analysis across Amazon, YouTube, News, and Web sources</li>
+            <li>Implemented Sentiment War Room, predictive trend forecasting, keyword-driven Sentiment Explorer, and conversational AI chatbot for market queries</li>
+            <li>Secure platform with JWT auth, one-click PDF/Excel report exports, and interactive Chart.js visualizations</li>
           </ul>
         </div>
         <div class="tl-footer">
           <div class="tl-stack">${tags(['React 18','Vite','Tailwind CSS','FastAPI','MongoDB','Pandas','Chart.js','Python'])}</div>
-          <a class="tl-link" href="https://drive.google.com/file/d/1OHF3FJid3omie9fvsmNclrCpMvkwEEDl/view" target="_blank" rel="noopener" title="View Infosys Internship Certificate">📜 Certificate ↗</a>
+          <div class="tl-links">
+            <a class="tl-link" href="https://market-trend-forecaster-kappa.vercel.app/" target="_blank" rel="noopener" title="Live Demo">🌐 Live Demo ↗</a>
+            <a class="tl-link" href="https://github.com/Prakhar1903/Market-trend-forecaster" target="_blank" rel="noopener" title="GitHub Repository">⚡ GitHub ↗</a>
+            <a class="tl-link" href="https://drive.google.com/file/d/1OHF3FJid3omie9fvsmNclrCpMvkwEEDl/view" target="_blank" rel="noopener" title="View Infosys Internship Certificate">📜 Certificate ↗</a>
+          </div>
         </div>
       </div>
 
@@ -516,7 +480,9 @@ function buildExperience() {
         </div>
         <div class="tl-footer">
           <div class="tl-stack">${tags(['HTML','CSS','JavaScript','React','Node.js','Express','MongoDB'])}</div>
-          <a class="tl-link" href="https://drive.google.com/file/d/1xyRsRWPFbvVTC5f9AUaQ7oIkEZOoHYBb/view" target="_blank" rel="noopener" title="View WSA Internship Certificate">📜 Certificate ↗</a>
+          <div class="tl-links">
+            <a class="tl-link" href="https://drive.google.com/file/d/1xyRsRWPFbvVTC5f9AUaQ7oIkEZOoHYBb/view" target="_blank" rel="noopener" title="View WSA Internship Certificate">📜 Certificate ↗</a>
+          </div>
         </div>
       </div>
 
@@ -782,7 +748,7 @@ Apps: <span class="t-info">about</span> · <span class="t-info">projects</span> 
     case 'ls':
       tLine(out, `
 <span class="t-info">drwxr-xr-x</span>  <span class="t-white">About.exe      </span><span class="t-dim">Full-stack Dev · AI Enthusiast</span>
-<span class="t-info">drwxr-xr-x</span>  <span class="t-white">Projects/      </span><span class="t-dim">KrishiGyan · Mockneto · VirtuGym · CivicResolver · Scalle · WeTano · MarketTrend</span>
+<span class="t-info">drwxr-xr-x</span>  <span class="t-white">Projects/      </span><span class="t-dim">KrishiGyan · Mockneto · VirtuGym · CivicResolver · Scalle</span>
 <span class="t-info">drwxr-xr-x</span>  <span class="t-white">Experience/    </span><span class="t-dim">UpStride · Infosys · WSA</span>
 <span class="t-info">-rw-r--r--</span>  <span class="t-white">Skills.json    </span><span class="t-dim">Java, C++, React, Node, FastAPI...</span>
 <span class="t-info">-rw-r--r--</span>  <span class="t-white">Education.log  </span><span class="t-dim">LPU B.Tech CSE · CGPA 8.12</span>
@@ -829,9 +795,7 @@ Soft Skills: Leadership, Problem-Solving, Adaptability, Quick Learner`);
 2. Mockneto        - AI Interview Simulator (React, Node, Express, MongoDB)
 3. VirtuGym        - Full-Stack Fitness Management Platform (Laravel, PHP, MySQL)
 4. CivicResolver   - Grievance Portal & Native Android App (React, Node, Kotlin)
-5. Scalle          - AWS Route 53 Cloud DNS Console Clone (Next.js 14, FastAPI)
-6. WeTano          - AI Multi-Agent Chatbot Automation Platform (React, FastAPI, CrewAI)
-7. Market Trend    - Sentiment Forecaster (FastAPI, React, MongoDB Atlas)`);
+5. Scalle          - AWS Route 53 Cloud DNS Console Clone (Next.js 14, FastAPI)`);
       } else {
         tLine(out, `<span class="t-err">cat: ${esc(args[0] || '(no file)')}: No such file</span><br><span class="t-dim">Try: about.txt · contact.txt · skills.txt · projects.txt</span>`);
       }
