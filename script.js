@@ -564,16 +564,16 @@ function buildAchievements() {
     ${item('💻', '250+ DSA Problems Solved', 'Solved across LeetCode, GeeksforGeeks, and HackerRank — demonstrating strong analytical and competitive programming skills.', 'Aug 2024 – Present')}
     ${item('🏅', 'Finalist — Fynd Hacktimus 2025 Hackathon', 'Selected among top students for innovative problem-solving and technical excellence.', 'Dec 2025')}
     ${item('⭐', 'HackerRank 5-Star in C++ &amp; Java', '5-Star rating in C++ and Java · 3-Star rating in Problem Solving, showcasing strong DSA expertise.', 'Oct 2025')}
-    ${item('🕹️', 'Code-A-Haunt 24-hour Hackathon', 'Participated in a 24-hour hackathon demonstrating rapid prototyping.', 'Mar 2024', '🔗 Hackathon Link ↗', '#')}
+    ${item('🕹️', 'Code-A-Haunt 24-hour Hackathon', 'Participated in a 24-hour hackathon demonstrating rapid prototyping and problem-solving.', 'Mar 2024', '📜 View Certificate ↗', 'https://drive.google.com/file/d/1vbrDt2jpBZC-ZQSa_1N2Ec7BrqXIRwJt/view?usp=sharing')}
     ${item('🎮', 'Byte-Bash 36-hour Hackathon', 'Participated in a 36-hour team hackathon.', 'Nov 2023')}
 
     <div class="section-hdr" style="margin-top:24px;">Training &amp; Certifications</div>
-    ${item('🤖', 'W3grads – Full Stack (MERN) with Gen AI', 'Built dynamic full-stack web apps using MERN, focusing on RESTful APIs and Gen AI integration.', 'Jun 2025 – Jul 2025', '📜 View Certificate ↗', '#')}
-    ${item('📜', 'Developing Front End Apps with React', 'IBM / Coursera certification in modern React application development.', 'Oct 2025', '📜 View Certificate ↗', '#')}
-    ${item('📜', 'Introduction to Web Development with HTML5, CSS3 &amp; JS', 'Core web standards and modern frontend foundation.', 'Oct 2025', '📜 View Certificate ↗', '#')}
-    ${item('☁️', 'NPTEL — Cloud Computing', 'Comprehensive foundational cloud computing principles and architecture.', 'May 2025', '📜 View Certificate ↗', '#')}
-    ${item('☕', 'Java Programming', 'Object-Oriented Programming and advanced Java development concepts.', 'May 2025', '📜 View Certificate ↗', '#')}
-    ${item('🧠', 'Data Structures and Algorithms', 'Advanced algorithm design, time/space complexity analysis.', 'May 2025', '📜 View Certificate ↗', '#')}`;
+    ${item('🤖', 'W3grads – Full Stack (MERN) with Gen AI', 'Built dynamic full-stack web apps using MERN, focusing on RESTful APIs and Gen AI integration.', 'Jun 2025 – Jul 2025', '📜 View Certificate ↗', 'https://drive.google.com/file/d/1F8GePj3npKSL9lcjr31KK_A_gM8X1ETA/view?usp=sharing')}
+    ${item('📜', 'Developing Front End Apps with React', 'edX / IBM verified certificate in modern React application development.', 'Oct 2025', '📜 View Certificate ↗', 'https://courses.edx.org/certificates/f33c845091914a7b80feefc764c3340c?_gl=1*1j7kaf4*_gcl_au*NTU4NzQwOTM1LjE3NjE3NTQwMDQ.*_ga*NzM1NTAwNjY0LjE3NjE3NTM5MDI.*_ga_D3KS4KMDT0*czE3NjQyODI4MTckbzYwJGcxJHQxNzY0MjgyOTAzJGozOCRsMCRoMA')}
+    ${item('📜', 'Introduction to Web Development with HTML5, CSS3 &amp; JS', 'edX / IBM verified certificate in core web standards and modern frontend architecture.', 'Oct 2025', '📜 View Certificate ↗', 'https://courses.edx.org/certificates/f8f38c6a866645e2b0d1552511088ab0?_gl=1*we4pe8*_gcl_au*NTU4NzQwOTM1LjE3NjE3NTQwMDQ.*_ga*NzM1NTAwNjY0LjE3NjE3NTM5MDI.*_ga_D3KS4KMDT0*czE3NjQyODI4MTckbzYwJGcxJHQxNzY0MjgyOTAzJGozOCRsMCRoMA')}
+    ${item('☁️', 'NPTEL — Cloud Computing', 'NPTEL verified e-certificate in comprehensive cloud computing principles and architecture.', 'May 2025', '📜 View Certificate ↗', 'https://nptel.ac.in/noc/E_Certificate/NPTEL25CS11S153730217804245657')}
+    ${item('☕', 'Java Programming', 'Examly / Colab verified certification in Object-Oriented Programming and advanced Java development concepts.', 'May 2025', '📜 View Certificate ↗', 'https://lpucolab438.examly.io/certificate/U2FsdGVkX19tiYF4L3qH%2BZHGbY7w%2B2z%2F39RMhSiYPNg%3D')}
+    ${item('🧠', 'Data Structures and Algorithms', 'Examly / Colab verified certification in advanced data structures and algorithmic complexity.', 'May 2025', '📜 View Certificate ↗', 'https://lpucolab438.examly.io/certificate/U2FsdGVkX1%2FPVUYUvVAnd9PWjJpf8qp2BkqdZHKMcZ8%3D')}`;
 }
 
 function buildContact() {
