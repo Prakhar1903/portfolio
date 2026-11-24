@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cyberpunk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>PM-OS | Prakhar Mishra Portfolio</title>
+  <meta name="description" content="Prakhar Mishra — Full Stack & AI/ML Engineer Portfolio Operating System (PM-OS). Interactive Desktop UI featuring real projects, verified credentials, live terminal, and AI assistant.">
+  <meta property="og:title" content="Prakhar Mishra | PM-OS Portfolio">
+  <meta property="og:description" content="Explore projects, internships, and live demos in an interactive desktop OS experience.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.2">
 </head>
 <body>
 
@@ -16,7 +20,7 @@
     <div class="boot-logo">
       <span class="logo-pm">PM</span><span class="logo-os">-OS</span>
     </div>
-    <p class="boot-tagline">Portfolio Operating System</p>
+    <p class="boot-tagline">Portfolio Operating System v2.0</p>
     <div class="boot-log-box" id="boot-log"></div>
     <div class="boot-bar-wrap">
       <div class="boot-bar" id="boot-bar"></div>
@@ -31,7 +35,7 @@
   <!-- Hint overlay (fades after a few sec) -->
   <div id="hint-overlay">
     <div class="hint-box">
-      <span>💡</span> Double-click icons to open &nbsp;|&nbsp; Right-click desktop for menu &nbsp;|&nbsp; Type <code>help</code> in Terminal
+      <span>💡</span> Click/Double-click icons to open &nbsp;|&nbsp; Right-click desktop for menu &nbsp;|&nbsp; Click <b>⚡ PM-OS</b> for Start Menu
     </div>
   </div>
 
@@ -44,37 +48,57 @@
 
   <!-- Desktop Icons -->
   <div id="icon-grid">
-    <div class="d-icon" ondblclick="openApp('about')" onclick="selectIcon(this)">
+    <div class="d-icon" data-app="about" ondblclick="openApp('about')" onclick="handleIconClick(this, 'about')">
       <div class="d-icon-img">👤</div>
       <div class="d-icon-name">About.exe</div>
     </div>
-    <div class="d-icon" ondblclick="openApp('projects')" onclick="selectIcon(this)">
+    <div class="d-icon" data-app="resume" ondblclick="openApp('resume')" onclick="handleIconClick(this, 'resume')">
+      <div class="d-icon-img">📄</div>
+      <div class="d-icon-name">Resume.exe</div>
+    </div>
+    <div class="d-icon" data-app="projects" ondblclick="openApp('projects')" onclick="handleIconClick(this, 'projects')">
       <div class="d-icon-img">🗂️</div>
       <div class="d-icon-name">Projects/</div>
     </div>
-    <div class="d-icon" ondblclick="openApp('experience')" onclick="selectIcon(this)">
+    <div class="d-icon" data-app="experience" ondblclick="openApp('experience')" onclick="handleIconClick(this, 'experience')">
       <div class="d-icon-img">💼</div>
       <div class="d-icon-name">Experience/</div>
     </div>
-    <div class="d-icon" ondblclick="openApp('skills')" onclick="selectIcon(this)">
+    <div class="d-icon" data-app="skills" ondblclick="openApp('skills')" onclick="handleIconClick(this, 'skills')">
       <div class="d-icon-img">⚡</div>
       <div class="d-icon-name">Skills.json</div>
     </div>
-    <div class="d-icon" ondblclick="openApp('education')" onclick="selectIcon(this)">
+    <div class="d-icon" data-app="education" ondblclick="openApp('education')" onclick="handleIconClick(this, 'education')">
       <div class="d-icon-img">🎓</div>
       <div class="d-icon-name">Education.log</div>
     </div>
-    <div class="d-icon" ondblclick="openApp('achievements')" onclick="selectIcon(this)">
+    <div class="d-icon" data-app="achievements" ondblclick="openApp('achievements')" onclick="handleIconClick(this, 'achievements')">
       <div class="d-icon-img">🏆</div>
       <div class="d-icon-name">Awards/</div>
     </div>
-    <div class="d-icon" ondblclick="openApp('contact')" onclick="selectIcon(this)">
+    <div class="d-icon" data-app="contact" ondblclick="openApp('contact')" onclick="handleIconClick(this, 'contact')">
       <div class="d-icon-img">📡</div>
       <div class="d-icon-name">Contact.sh</div>
     </div>
-    <div class="d-icon" ondblclick="openApp('terminal')" onclick="selectIcon(this)">
+    <div class="d-icon" data-app="terminal" ondblclick="openApp('terminal')" onclick="handleIconClick(this, 'terminal')">
       <div class="d-icon-img">⌨️</div>
       <div class="d-icon-name">Terminal</div>
+    </div>
+    <div class="d-icon" data-app="ai" ondblclick="openApp('ai')" onclick="handleIconClick(this, 'ai')">
+      <div class="d-icon-img">🤖</div>
+      <div class="d-icon-name">PM-Bot.exe</div>
+    </div>
+    <div class="d-icon" data-app="player" ondblclick="openApp('player')" onclick="handleIconClick(this, 'player')">
+      <div class="d-icon-img">🎵</div>
+      <div class="d-icon-name">Player.exe</div>
+    </div>
+    <div class="d-icon" data-app="snake" ondblclick="openApp('snake')" onclick="handleIconClick(this, 'snake')">
+      <div class="d-icon-img">🐍</div>
+      <div class="d-icon-name">Snake.exe</div>
+    </div>
+    <div class="d-icon" data-app="settings" ondblclick="openApp('settings')" onclick="handleIconClick(this, 'settings')">
+      <div class="d-icon-img">⚙️</div>
+      <div class="d-icon-name">Settings.exe</div>
     </div>
   </div>
 
@@ -84,34 +108,170 @@
   <!-- Taskbar -->
   <div id="taskbar">
     <div id="tb-left">
-      <button class="tb-start" onclick="openApp('terminal')">⚡ PM-OS</button>
+      <button class="tb-start" id="tb-start-btn" onclick="toggleStartMenu(event)">⚡ PM-OS</button>
     </div>
     <div id="tb-apps"></div>
     <div id="tb-right">
-      <div id="tb-time">00:00</div>
-      <div id="tb-date"></div>
+      <div id="tb-tray">
+        <button class="tb-tray-btn" id="tb-sound-btn" onclick="toggleSound(event)" title="Toggle Sound (Mute/Unmute)">🔊</button>
+        <button class="tb-tray-btn" id="tb-theme-btn" onclick="cycleTheme(event)" title="Quick Theme Switcher">🎨</button>
+        <button class="tb-tray-btn" id="tb-player-btn" onclick="openApp('player')" title="Lo-Fi Music Player">🎵</button>
+      </div>
+      <div id="tb-clock" onclick="toggleCalendar(event)" title="Click for Calendar & Stats">
+        <div id="tb-time">00:00</div>
+        <div id="tb-date"></div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- ══════════════ START MENU ══════════════ -->
+<div id="start-menu" style="display:none;" onclick="event.stopPropagation()">
+  <div class="sm-header">
+    <div class="sm-avatar">👨‍💻</div>
+    <div class="sm-user-info">
+      <div class="sm-name">Prakhar Mishra</div>
+      <div class="sm-role">Full-Stack & AI/ML Engineer</div>
+      <div class="sm-status"><span class="dot-green"></span> Available for Hire</div>
+    </div>
+  </div>
+
+  <div class="sm-quick-actions">
+    <button class="sm-action-btn" onclick="openApp('resume'); toggleStartMenu();">
+      <span>📄</span> Resume
+    </button>
+    <a href="https://linkedin.com/in/prakharm1903" target="_blank" rel="noopener" class="sm-action-btn">
+      <span>💼</span> LinkedIn
+    </a>
+    <a href="https://github.com/Prakhar1903" target="_blank" rel="noopener" class="sm-action-btn">
+      <span>⚡</span> GitHub
+    </a>
+    <a href="mailto:prakharm1903@gmail.com" class="sm-action-btn">
+      <span>✉️</span> Email
+    </a>
+  </div>
+
+  <div class="sm-search-wrap">
+    <input type="text" id="sm-search" placeholder="🔍 Search apps, projects, skills..." oninput="filterStartApps(this.value)">
+  </div>
+
+  <div class="sm-app-list" id="sm-app-list">
+    <!-- Populated dynamically / static fallback -->
+    <div class="sm-item" onclick="openApp('about'); toggleStartMenu();">
+      <div class="sm-item-icon">👤</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">About.exe</div>
+        <div class="sm-item-desc">Bio, stats, education, and links</div>
+      </div>
+    </div>
+    <div class="sm-item" onclick="openApp('resume'); toggleStartMenu();">
+      <div class="sm-item-icon">📄</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">Resume.exe</div>
+        <div class="sm-item-desc">Print-ready CV, verified credentials, download</div>
+      </div>
+    </div>
+    <div class="sm-item" onclick="openApp('projects'); toggleStartMenu();">
+      <div class="sm-item-icon">🗂️</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">Projects/</div>
+        <div class="sm-item-desc">KrishiGyan, Mockneto, VirtuGym, CivicResolver</div>
+      </div>
+    </div>
+    <div class="sm-item" onclick="openApp('experience'); toggleStartMenu();">
+      <div class="sm-item-icon">💼</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">Experience/</div>
+        <div class="sm-item-desc">UpStride, Infosys Springboard, WebStack Academy</div>
+      </div>
+    </div>
+    <div class="sm-item" onclick="openApp('skills'); toggleStartMenu();">
+      <div class="sm-item-icon">⚡</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">Skills.json</div>
+        <div class="sm-item-desc">Python, React, GenAI, FastAPI, PyTorch, Docker</div>
+      </div>
+    </div>
+    <div class="sm-item" onclick="openApp('terminal'); toggleStartMenu();">
+      <div class="sm-item-icon">⌨️</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">Terminal</div>
+        <div class="sm-item-desc">Interactive CLI shell with neofetch, cat, help</div>
+      </div>
+    </div>
+    <div class="sm-item" onclick="openApp('ai'); toggleStartMenu();">
+      <div class="sm-item-icon">🤖</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">PM-Bot.exe</div>
+        <div class="sm-item-desc">Chat with AI assistant trained on Prakhar's career</div>
+      </div>
+    </div>
+    <div class="sm-item" onclick="openApp('player'); toggleStartMenu();">
+      <div class="sm-item-icon">🎵</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">Player.exe</div>
+        <div class="sm-item-desc">Lo-Fi ambient synth audio & visualizer</div>
+      </div>
+    </div>
+    <div class="sm-item" onclick="openApp('snake'); toggleStartMenu();">
+      <div class="sm-item-icon">🐍</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">Snake.exe</div>
+        <div class="sm-item-desc">Retro neon arcade mini-game</div>
+      </div>
+    </div>
+    <div class="sm-item" onclick="openApp('settings'); toggleStartMenu();">
+      <div class="sm-item-icon">⚙️</div>
+      <div class="sm-item-details">
+        <div class="sm-item-title">Settings.exe</div>
+        <div class="sm-item-desc">Themes, wallpapers, sound preferences</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sm-footer">
+    <div class="sm-uptime" id="sm-uptime">Uptime: 00:00:00</div>
+    <div class="sm-power-btns">
+      <button class="sm-pbtn" onclick="rebootSystem()" title="Reboot OS">🔄 Reboot</button>
+      <button class="sm-pbtn" onclick="closeAllWins(); toggleStartMenu();" title="Close all windows">✕ Clear</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CALENDAR / SYSTEM FLYOUT ══════════════ -->
+<div id="calendar-flyout" style="display:none;" onclick="event.stopPropagation()">
+  <div class="cf-header">
+    <div class="cf-big-time" id="cf-time">12:00:00</div>
+    <div class="cf-date-str" id="cf-date-full">Tuesday, Nov 24, 2026</div>
+  </div>
+  <div class="cf-calendar" id="cf-cal-grid"></div>
+  <div class="cf-system-stats">
+    <div class="cf-stat-row">
+      <span>CPU Workload</span>
+      <span class="cf-stat-val" id="cf-cpu-val">14%</span>
+    </div>
+    <div class="cf-stat-bar"><div class="cf-stat-fill" id="cf-cpu-fill" style="width:14%"></div></div>
+    <div class="cf-stat-row" style="margin-top:6px;">
+      <span>Memory Usage</span>
+      <span class="cf-stat-val">2.8 GB / 16 GB</span>
+    </div>
+    <div class="cf-stat-bar"><div class="cf-stat-fill" style="width:22%; background:var(--accent2);"></div></div>
   </div>
 </div>
 
 <!-- Right-click context menu -->
 <div id="ctx-menu" style="display:none;">
   <div class="ctx-item" onclick="openApp('terminal')">⌨️&nbsp; Open Terminal</div>
-  <div class="ctx-item" onclick="openApp('about')">👤&nbsp; Open About</div>
+  <div class="ctx-item" onclick="openApp('resume')">📄&nbsp; Open Resume</div>
   <div class="ctx-item" onclick="openApp('projects')">🗂️&nbsp; Open Projects</div>
+  <div class="ctx-item" onclick="openApp('ai')">🤖&nbsp; Ask PM-Bot AI</div>
+  <div class="ctx-item" onclick="openApp('player')">🎵&nbsp; Lo-Fi Player</div>
+  <div class="ctx-item" onclick="openApp('snake')">🐍&nbsp; Play Snake</div>
+  <div class="ctx-item" onclick="openApp('settings')">⚙️&nbsp; System Settings</div>
   <hr class="ctx-sep">
   <div class="ctx-item" onclick="closeAllWins()">✕&nbsp; Close All Windows</div>
 </div>
 
-<!-- Mobile Notice -->
-<div id="mobile-notice">
-  <div class="mob-box">
-    <div class="mob-logo">PM-OS</div>
-    <p>This portfolio is best viewed on a <strong>desktop or laptop</strong> — it's a full OS experience!</p>
-    <p style="margin-top:10px; font-size:0.8rem; color:#64748b;">Rotate to landscape or open on a larger screen for the best experience.</p>
-  </div>
-</div>
-
-<script src="script.js?v=2.1"></script>
+<script src="script.js?v=2.2"></script>
 </body>
 </html>

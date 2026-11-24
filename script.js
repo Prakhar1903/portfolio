@@ -56,6 +56,36 @@ const APPS = {
     w: 480, h: 430,
     build: buildContact
   },
+  resume: {
+    title: '📄  Resume.exe — Prakhar Mishra',
+    icon:  '📄',
+    w: 720, h: 600,
+    build: buildResume
+  },
+  settings: {
+    title: '⚙️  Settings.exe — Preferences',
+    icon:  '⚙️',
+    w: 520, h: 500,
+    build: buildSettings
+  },
+  player: {
+    title: '🎵  Player.exe — Lo-Fi Synth',
+    icon:  '🎵',
+    w: 460, h: 440,
+    build: buildPlayer
+  },
+  snake: {
+    title: '🐍  Snake.exe — Retro Arcade',
+    icon:  '🐍',
+    w: 420, h: 510,
+    build: buildSnake
+  },
+  ai: {
+    title: '🤖  PM-Bot.exe — Ask Prakhar AI',
+    icon:  '🤖',
+    w: 540, h: 520,
+    build: buildAI
+  },
   terminal: {
     title: '⌨️  Terminal — PM-OS',
     icon:  '⌨️',
@@ -135,6 +165,10 @@ function openApp(id) {
   focusWin(id);
 
   if (app.isTerminal) setTimeout(() => initTerminal(), 60);
+  if (id === 'snake') setTimeout(() => initSnake(), 60);
+  if (id === 'player') setTimeout(() => initPlayer(), 60);
+  if (id === 'ai') setTimeout(() => initAI(), 60);
+  playSound('open');
 
   // Entrance animation
   win.style.opacity   = '0';
@@ -149,6 +183,7 @@ function openApp(id) {
 function closeWin(id) {
   const w = openWindows[id];
   if (!w) return;
+  playSound('close');
   const el = w.el;
   el.style.transition = 'opacity 0.14s ease, transform 0.14s ease';
   el.style.opacity    = '0';
@@ -604,6 +639,288 @@ function buildContact() {
     <div class="open-badge"><span class="dot-green"></span>Available for internships &amp; full-time roles</div>`;
 }
 
+function buildResume() {
+  return `
+    <div class="resume-toolbar">
+      <div class="resume-tb-left">
+        <button class="res-btn" onclick="window.print()"><span>📥</span> Download (Print to PDF)</button>
+        <a class="res-btn res-btn-sec" href="https://drive.google.com/file/d/1bq5zw9V4U_CzvmvkMqb3yx-un6iTfN-W/view" target="_blank" rel="noopener"><span>📜</span> Verified Drive Credentials</a>
+      </div>
+      <div class="resume-tb-right">
+        <a class="res-btn res-btn-sec" href="https://linkedin.com/in/prakharm1903" target="_blank" rel="noopener"><span>💼</span> LinkedIn</a>
+        <a class="res-btn res-btn-sec" href="https://github.com/Prakhar1903" target="_blank" rel="noopener"><span>⚡</span> GitHub</a>
+        <a class="res-btn" href="mailto:prakharm1903@gmail.com"><span>✉️</span> Hire Me</a>
+      </div>
+    </div>
+    <div class="resume-wrap">
+      <div class="resume-sheet">
+        <div class="res-header">
+          <div class="res-name">PRAKHAR MISHRA</div>
+          <div class="res-sub">Full-Stack Developer &amp; AI/ML Engineer · B.Tech CSE (CGPA: 8.12)</div>
+          <div class="res-contact-bar">
+            <span>📧 <a href="mailto:prakharm1903@gmail.com">prakharm1903@gmail.com</a></span>
+            <span>📱 +91 7869691849</span>
+            <span>📍 LPU, Punjab, India</span>
+            <span>💻 <a href="https://github.com/Prakhar1903" target="_blank">github.com/Prakhar1903</a></span>
+            <span>💼 <a href="https://linkedin.com/in/prakharm1903" target="_blank">linkedin.com/in/prakharm1903</a></span>
+          </div>
+        </div>
+
+        <div class="res-sec">
+          <div class="res-sec-title">EDUCATION</div>
+          <div class="res-block">
+            <div class="res-block-header">
+              <span class="res-company">Lovely Professional University</span>
+              <span class="res-dates">2022 – 2026 | Punjab, India</span>
+            </div>
+            <div class="res-role-line">Bachelor of Technology in Computer Science &amp; Engineering · <b>CGPA: 8.12</b></div>
+          </div>
+          <div class="res-block">
+            <div class="res-block-header">
+              <span class="res-company">Kendriya Vidyalaya Sangathan</span>
+              <span class="res-dates">CBSE Board</span>
+            </div>
+            <div class="res-role-line">Class XII: <b>92.0%</b> &nbsp;|&nbsp; Class X: <b>91.2%</b></div>
+          </div>
+        </div>
+
+        <div class="res-sec">
+          <div class="res-sec-title">WORK EXPERIENCE</div>
+          <div class="res-block">
+            <div class="res-block-header">
+              <span class="res-company">UpStride — Full Stack Developer Intern</span>
+              <span class="res-dates">Apr 2026 – Jun 2026</span>
+            </div>
+            <div class="res-role-line">WeTano Engage AI Fork · Next.js · FastAPI · LangChain · Milvus RAG · Docker</div>
+            <ul class="res-bullets">
+              <li>Architected enterprise AI engagement workflows with LangChain &amp; Milvus vector DB, cutting semantic response latency by 35%.</li>
+              <li>Engineered high-throughput FastAPI microservices and connected them to responsive Next.js frontend interfaces.</li>
+              <li>Containerized production pipelines using Docker with automated CI/CD deployment routines.</li>
+            </ul>
+          </div>
+          <div class="res-block">
+            <div class="res-block-header">
+              <span class="res-company">Infosys Springboard — AI/ML Intern</span>
+              <span class="res-dates">Feb 2026 – Apr 2026</span>
+            </div>
+            <div class="res-role-line">Market Trend Forecaster · Python · TensorFlow · Scikit-learn · Streamlit &amp; FastAPI</div>
+            <ul class="res-bullets">
+              <li>Built ensemble machine learning models (LSTM + XGBoost) predicting stock movements with <b>89% directional accuracy</b>.</li>
+              <li>Processed 5+ years of OHLCV historical time-series datasets with custom feature engineering &amp; technical indicators.</li>
+              <li>Deployed interactive web platform with real-time financial charts on Vercel.</li>
+            </ul>
+          </div>
+          <div class="res-block">
+            <div class="res-block-header">
+              <span class="res-company">WebStack Academy — MERN Stack Intern</span>
+              <span class="res-dates">Dec 2025 – Jan 2026</span>
+            </div>
+            <div class="res-role-line">React.js · Node.js · Express.js · MongoDB · REST APIs · JWT Auth</div>
+            <ul class="res-bullets">
+              <li>Developed modular full-stack web applications featuring role-based authentication, real-time CRUD, and state management.</li>
+              <li>Built and documented 15+ secure RESTful API endpoints with MongoDB aggregation pipelines.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="res-sec">
+          <div class="res-sec-title">FEATURED PROJECTS</div>
+          <div class="res-block">
+            <div class="res-block-header">
+              <span class="res-company">KrishiGyan — Smart Agri-Tech AI Platform</span>
+              <span class="res-dates"><a href="https://krishi-gyan-five.vercel.app/" target="_blank">Live Demo ↗</a> | <a href="https://github.com/Prakhar1903/KrishiGyan" target="_blank">GitHub ↗</a></span>
+            </div>
+            <div class="res-role-line">Next.js · Node.js · TensorFlow · FastAPI · Razorpay · MongoDB</div>
+            <ul class="res-bullets">
+              <li>Computer vision crop disease diagnostics with 94% accuracy, multi-lingual audio advisories, and direct mandi trade connectivity.</li>
+            </ul>
+          </div>
+          <div class="res-block">
+            <div class="res-block-header">
+              <span class="res-company">Mockneto — AI-Powered Mock Interview Platform</span>
+              <span class="res-dates"><a href="https://github.com/Prakhar1903/MOCKNETO" target="_blank">GitHub ↗</a></span>
+            </div>
+            <div class="res-role-line">React.js · Tailwind CSS · WebRTC · Gemini AI API · SpeechRecognition</div>
+            <ul class="res-bullets">
+              <li>Automated technical mock interviews with real-time speech transcription, facial sentiment analysis, and instant scoring rubrics.</li>
+            </ul>
+          </div>
+          <div class="res-block">
+            <div class="res-block-header">
+              <span class="res-company">VirtuGym — AI Computer Vision Fitness Coach</span>
+              <span class="res-dates"><a href="https://github.com/Prakhar1903/Virtugym" target="_blank">GitHub ↗</a></span>
+            </div>
+            <div class="res-role-line">React.js · Python · OpenCV · MediaPipe · WebRTC</div>
+            <ul class="res-bullets">
+              <li>Real-time 33-point skeletal landmark detection for workout rep counting and live posture correction angle calculations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="res-sec">
+          <div class="res-sec-title">TECHNICAL SKILLS</div>
+          <ul class="res-bullets">
+            <li><b>Languages:</b> Python, JavaScript (ES6+), TypeScript, C++, Java, SQL, HTML5/CSS3</li>
+            <li><b>Frameworks &amp; Web:</b> React.js, Next.js, Node.js, Express.js, FastAPI, Tailwind CSS, Redux Toolkit</li>
+            <li><b>AI / ML / Data:</b> TensorFlow, PyTorch, Scikit-learn, OpenCV, MediaPipe, LangChain, Milvus RAG, Gemini API</li>
+            <li><b>Databases &amp; DevOps:</b> MongoDB, PostgreSQL, Docker, Git/GitHub, Linux (Ubuntu), REST APIs, Vercel</li>
+          </ul>
+        </div>
+
+        <div class="res-sec">
+          <div class="res-sec-title">HONORS &amp; CERTIFICATIONS</div>
+          <ul class="res-bullets">
+            <li><b>edX &amp; W3Cx:</b> Web Development Fundamentals (HTML5/CSS3/JavaScript)</li>
+            <li><b>edX &amp; IBM:</b> Developing Front-End Apps with React</li>
+            <li><b>NPTEL (IIT Kharagpur):</b> Cloud Computing Certification</li>
+            <li><b>Examly / LPU Colab:</b> Java Programming &amp; Data Structures &amp; Algorithms</li>
+            <li><b>Hackathons:</b> Code-A-Haunt Finalist · Fynd Hacktimus 2025 Finalist · HackerRank 5-Star (C++ &amp; Java)</li>
+          </ul>
+        </div>
+      </div>
+    </div>`;
+}
+
+function buildSettings() {
+  return `
+    <div class="settings-wrap">
+      <div class="setting-group">
+        <div class="setting-group-title"><span>🎨</span> Desktop Color Themes</div>
+        <div class="theme-grid">
+          <div class="theme-card ${currentTheme === 'cyberpunk' ? 'active' : ''}" data-theme="cyberpunk" onclick="setTheme('cyberpunk')">
+            <div class="tc-preview" style="background:#030810; border:1px solid #00f5ff;"><span style="color:#00f5ff;">■</span><span style="color:#a855f7;">■</span></div>
+            <div class="tc-name">Cyberpunk</div>
+          </div>
+          <div class="theme-card ${currentTheme === 'matrix' ? 'active' : ''}" data-theme="matrix" onclick="setTheme('matrix')">
+            <div class="tc-preview" style="background:#010801; border:1px solid #00ff41;"><span style="color:#00ff41;">■</span><span style="color:#10b981;">■</span></div>
+            <div class="tc-name">Matrix</div>
+          </div>
+          <div class="theme-card ${currentTheme === 'synthwave' ? 'active' : ''}" data-theme="synthwave" onclick="setTheme('synthwave')">
+            <div class="tc-preview" style="background:#0e051b; border:1px solid #ff71ce;"><span style="color:#ff71ce;">■</span><span style="color:#01cdfe;">■</span></div>
+            <div class="tc-name">Synthwave</div>
+          </div>
+          <div class="theme-card ${currentTheme === 'obsidian' ? 'active' : ''}" data-theme="obsidian" onclick="setTheme('obsidian')">
+            <div class="tc-preview" style="background:#09090b; border:1px solid #eab308;"><span style="color:#eab308;">■</span><span style="color:#fafafa;">■</span></div>
+            <div class="tc-name">Obsidian</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <div class="setting-group-title"><span>🌌</span> Wallpaper Engine</div>
+        <div class="wall-grid">
+          <button class="wall-btn ${currentWallpaper === 'constellation' ? 'active' : ''}" data-wall="constellation" onclick="setWallpaper('constellation')">✨ Particles</button>
+          <button class="wall-btn ${currentWallpaper === 'matrix' ? 'active' : ''}" data-wall="matrix" onclick="setWallpaper('matrix')">💻 Matrix Rain</button>
+          <button class="wall-btn ${currentWallpaper === 'stars' ? 'active' : ''}" data-wall="stars" onclick="setWallpaper('stars')">🌠 Starfield</button>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <div class="setting-group-title"><span>🔊</span> Sound &amp; Audio Feedback</div>
+        <div class="setting-row">
+          <span>UI Mechanical Sound Effects</span>
+          <button class="sm-pbtn" id="sett-sound-btn" onclick="toggleSound(); this.textContent = soundEnabled ? 'Enabled' : 'Muted';">
+            ${soundEnabled ? 'Enabled' : 'Muted'}
+          </button>
+        </div>
+        <div class="setting-row">
+          <span>Test Audio Chime</span>
+          <button class="sm-pbtn" onclick="playSound('open')">▶ Play Test</button>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <div class="setting-group-title"><span>⚙️</span> System Controls</div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600; color:#fff;">Restart PM-OS</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Re-executes BIOS initialization and boot sequence</div>
+          </div>
+          <button class="sm-pbtn" style="border-color:var(--accent); color:var(--accent);" onclick="rebootSystem()">🔄 Reboot</button>
+        </div>
+        <div class="setting-row">
+          <div>
+            <div style="font-weight:600; color:#fff;">Close All Windows</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Minimizes clutter and clears the workspace</div>
+          </div>
+          <button class="sm-pbtn" onclick="closeAllWins()">✕ Clear</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function buildPlayer() {
+  const tr = TRACKS[currentTrackIdx];
+  return `
+    <div class="player-box">
+      <div class="player-disc-wrap">
+        <div class="player-disc ${isMusicPlaying ? 'playing' : ''}" id="pl-disc">🎵</div>
+      </div>
+      <div class="player-track-info">
+        <div class="player-track-title" id="pl-title">${tr.title}</div>
+        <div class="player-track-artist" id="pl-artist">${tr.artist}</div>
+      </div>
+      <canvas id="player-vis" width="340" height="60"></canvas>
+      <div class="player-controls">
+        <button class="pl-btn" onclick="prevTrack()" title="Previous Track">⏮</button>
+        <button class="pl-btn pl-btn-play" id="pl-play-btn" onclick="togglePlayMusic()" title="Play / Pause">${isMusicPlaying ? '⏸' : '▶'}</button>
+        <button class="pl-btn" onclick="nextTrack()" title="Next Track">⏭</button>
+      </div>
+      <div style="font-size:0.72rem; color:var(--text-muted); font-family:var(--font-mono);">Procedural Web Audio Ambient Engine</div>
+    </div>`;
+}
+
+function buildSnake() {
+  return `
+    <div class="snake-wrap">
+      <div class="snake-header">
+        <div>SCORE: <span class="snake-score-val" id="snake-score">0</span></div>
+        <div>BEST: <span class="snake-score-val" id="snake-best">0</span></div>
+      </div>
+      <canvas id="snake-canvas" width="320" height="320"></canvas>
+      <div class="snake-dpad">
+        <div></div>
+        <button class="dpad-btn" onclick="changeSnakeDir(0, -1)">▲</button>
+        <div></div>
+        <button class="dpad-btn" onclick="changeSnakeDir(-1, 0)">◀</button>
+        <button class="dpad-btn" onclick="restartSnake()">🔄</button>
+        <button class="dpad-btn" onclick="changeSnakeDir(1, 0)">▶</button>
+        <div></div>
+        <button class="dpad-btn" onclick="changeSnakeDir(0, 1)">▼</button>
+        <div></div>
+      </div>
+      <div style="font-size:0.68rem; color:var(--text-muted); font-family:var(--font-mono);">Use Arrow Keys, WASD, or Buttons</div>
+    </div>`;
+}
+
+function buildAI() {
+  return `
+    <div class="ai-wrap">
+      <div class="ai-chat-header">
+        <span>🤖</span> PM-Bot — Prakhar AI Career Assistant
+      </div>
+      <div class="ai-msg-list" id="ai-msg-list">
+        <div class="ai-msg bot">
+          <div class="ai-bubble">
+            👋 Hi there! I'm <b>PM-Bot</b>, an AI assistant trained on Prakhar Mishra's resume, skills, and projects.<br><br>
+            Feel free to ask me anything or click a quick prompt below:
+          </div>
+        </div>
+      </div>
+      <div class="ai-chips-wrap">
+        <button class="ai-chip" onclick="askAIChip('What are Prakhar\\'s top AI/ML projects?')">⭐ Top AI Projects</button>
+        <button class="ai-chip" onclick="askAIChip('Tell me about his internships at UpStride &amp; Infosys')">💼 Internships</button>
+        <button class="ai-chip" onclick="askAIChip('What is his full technical stack?')">⚡ Tech Stack</button>
+        <button class="ai-chip" onclick="askAIChip('Why should we hire Prakhar?')">🎯 Why Hire Him?</button>
+        <button class="ai-chip" onclick="askAIChip('How can I contact Prakhar?')">📬 Contact Info</button>
+      </div>
+      <div class="ai-input-row">
+        <input type="text" class="ai-input" id="ai-user-inp" placeholder="Ask about projects, skills, experience..." onkeydown="if(event.key==='Enter') sendAIMessage()">
+        <button class="ai-send-btn" onclick="sendAIMessage()">Send</button>
+      </div>
+    </div>`;
+}
+
 function buildTerminal() {
   return `
     <div class="term-wrap" id="term-wrap">
@@ -688,14 +1005,14 @@ function execCmd(raw, out) {
   <span class="t-info">whoami</span>           About Prakhar Mishra
   <span class="t-info">neofetch</span>         Fancy system info
   <span class="t-info">ls</span>               List desktop files
-  <span class="t-info">cat &lt;file&gt;</span>       Read a file  <span class="t-dim">(about.txt | contact.txt | skills.txt)</span>
+  <span class="t-info">cat &lt;file&gt;</span>       Read a file <span class="t-dim">(about.txt | contact.txt | skills.txt | resume.txt)</span>
   <span class="t-info">open &lt;app&gt;</span>       Open an app window
+  <span class="t-info">theme &lt;name&gt;</span>     Switch theme <span class="t-dim">(cyberpunk | matrix | synthwave | obsidian)</span>
+  <span class="t-info">matrix</span>           Toggle Matrix Rain wallpaper
   <span class="t-info">date</span>             Current date &amp; time
-  <span class="t-info">echo &lt;text&gt;</span>      Print text
-  <span class="t-info">history</span>          Show command history
   <span class="t-info">clear</span>            Clear terminal
 <span class="t-dim">────────────────────────────────────</span>
-Apps: <span class="t-info">about</span> · <span class="t-info">projects</span> · <span class="t-info">experience</span> · <span class="t-info">skills</span> · <span class="t-info">education</span> · <span class="t-info">achievements</span> · <span class="t-info">contact</span>`);
+Apps: <span class="t-info">resume</span> · <span class="t-info">projects</span> · <span class="t-info">experience</span> · <span class="t-info">skills</span> · <span class="t-info">education</span> · <span class="t-info">awards</span> · <span class="t-info">contact</span> · <span class="t-info">ai</span> · <span class="t-info">player</span> · <span class="t-info">snake</span> · <span class="t-info">settings</span>`);
       break;
 
     case 'whoami':
@@ -747,14 +1064,19 @@ Apps: <span class="t-info">about</span> · <span class="t-info">projects</span> 
 
     case 'ls':
       tLine(out, `
-<span class="t-info">drwxr-xr-x</span>  <span class="t-white">About.exe      </span><span class="t-dim">Full-stack Dev · AI Enthusiast</span>
+<span class="t-info">-rwxr-xr-x</span>  <span class="t-white">Resume.exe     </span><span class="t-dim">Print-ready CV, verified credentials, download</span>
+<span class="t-info">drwxr-xr-x</span>  <span class="t-white">About.exe      </span><span class="t-dim">Full-stack Dev · AI/ML Engineer · LPU CSE</span>
 <span class="t-info">drwxr-xr-x</span>  <span class="t-white">Projects/      </span><span class="t-dim">KrishiGyan · Mockneto · VirtuGym · CivicResolver · Scalle</span>
 <span class="t-info">drwxr-xr-x</span>  <span class="t-white">Experience/    </span><span class="t-dim">UpStride · Infosys · WSA</span>
-<span class="t-info">-rw-r--r--</span>  <span class="t-white">Skills.json    </span><span class="t-dim">Java, C++, React, Node, FastAPI...</span>
+<span class="t-info">-rw-r--r--</span>  <span class="t-white">Skills.json    </span><span class="t-dim">Python, Java, React, Next.js, FastAPI, Docker...</span>
 <span class="t-info">-rw-r--r--</span>  <span class="t-white">Education.log  </span><span class="t-dim">LPU B.Tech CSE · CGPA 8.12</span>
-<span class="t-info">drwxr-xr-x</span>  <span class="t-white">Awards/        </span><span class="t-dim">Hackathons · HackerRank · 250+ DSA</span>
+<span class="t-info">drwxr-xr-x</span>  <span class="t-white">Awards/        </span><span class="t-dim">Hackathons · HackerRank 5★ · 250+ DSA</span>
+<span class="t-info">-rwxr-xr-x</span>  <span class="t-white">PM-Bot.exe     </span><span class="t-dim">Interactive AI Career Assistant</span>
+<span class="t-info">-rwxr-xr-x</span>  <span class="t-white">Player.exe     </span><span class="t-dim">Lo-Fi ambient synthesizer &amp; audio visualizer</span>
+<span class="t-info">-rwxr-xr-x</span>  <span class="t-white">Snake.exe      </span><span class="t-dim">Retro neon arcade game</span>
+<span class="t-info">-rwxr-xr-x</span>  <span class="t-white">Settings.exe   </span><span class="t-dim">Desktop preferences &amp; theme switcher</span>
 <span class="t-info">-rwxr-xr-x</span>  <span class="t-white">Contact.sh     </span><span class="t-dim">prakharm1903@gmail.com</span>
-<span class="t-info">-rwxr-xr-x</span>  <span class="t-white">Terminal       </span><span class="t-dim">← You are here</span>`);
+<span class="t-info">-rwxr-xr-x</span>  <span class="t-white">Terminal       </span><span class="t-dim">← Active shell</span>`);
       break;
 
     case 'cat': {
@@ -791,16 +1113,70 @@ Soft Skills: Leadership, Problem-Solving, Adaptability, Quick Learner`);
       } else if (f === 'projects.txt') {
         tLine(out, `
 <span class="t-info"># projects.txt</span>
-1. KrishiGyan      - AI Agriculture Management Platform (React, Node, TensorFlow.js)
-2. Mockneto        - AI Interview Simulator (React, Node, Express, MongoDB)
-3. VirtuGym        - Full-Stack Fitness Management Platform (Laravel, PHP, MySQL)
-4. CivicResolver   - Grievance Portal & Native Android App (React, Node, Kotlin)
-5. Scalle          - AWS Route 53 Cloud DNS Console Clone (Next.js 14, FastAPI)`);
+1. KrishiGyan      - AI Agriculture Management Platform (Next.js, Node, TensorFlow)
+2. Mockneto        - AI Mock Interview Platform (React, WebRTC, Gemini API)
+3. VirtuGym        - Computer Vision Workout Correction (React, OpenCV, MediaPipe)
+4. CivicResolver   - Smart Citizen Grievance Portal (React, Node, Leaflet.js)
+5. Scalle          - Cloud DNS & Freelance Hub (React, Node, PostgreSQL)`);
+      } else if (f === 'resume.txt') {
+        tLine(out, `
+<span class="t-info"># resume.txt — Prakhar Mishra</span>
+Role: Full-Stack Developer &amp; AI/ML Engineer
+Education: LPU B.Tech CSE (CGPA: 8.12)
+Internships: UpStride (Apr-Jun '26) · Infosys (Feb-Apr '26) · WSA (Dec-Jan '26)
+Skills: Python, React, Next.js, FastAPI, Node.js, TensorFlow, LangChain, Docker
+Type <span class="t-info">open resume</span> for full printable CV with verified links.`);
       } else {
-        tLine(out, `<span class="t-err">cat: ${esc(args[0] || '(no file)')}: No such file</span><br><span class="t-dim">Try: about.txt · contact.txt · skills.txt · projects.txt</span>`);
+        tLine(out, `<span class="t-err">cat: ${esc(args[0] || '(no file)')}: No such file</span><br><span class="t-dim">Try: about.txt · contact.txt · skills.txt · projects.txt · resume.txt</span>`);
       }
       break;
     }
+
+    case 'resume':
+    case 'cv':
+      openApp('resume');
+      tLine(out, `<span class="t-out">Opening Resume.exe…</span>`);
+      break;
+
+    case 'ai':
+    case 'bot':
+      openApp('ai');
+      tLine(out, `<span class="t-out">Opening PM-Bot.exe…</span>`);
+      break;
+
+    case 'player':
+    case 'music':
+      openApp('player');
+      tLine(out, `<span class="t-out">Opening Player.exe…</span>`);
+      break;
+
+    case 'snake':
+    case 'game':
+      openApp('snake');
+      tLine(out, `<span class="t-out">Opening Snake.exe…</span>`);
+      break;
+
+    case 'settings':
+    case 'pref':
+      openApp('settings');
+      tLine(out, `<span class="t-out">Opening Settings.exe…</span>`);
+      break;
+
+    case 'theme': {
+      const th = (args[0] || '').toLowerCase();
+      if (['cyberpunk', 'matrix', 'synthwave', 'obsidian'].includes(th)) {
+        setTheme(th);
+        tLine(out, `<span class="t-out">Theme switched to '${esc(th)}'.</span>`);
+      } else {
+        tLine(out, `<span class="t-err">Usage: theme &lt;cyberpunk | matrix | synthwave | obsidian&gt;</span>`);
+      }
+      break;
+    }
+
+    case 'matrix':
+      setWallpaper(currentWallpaper === 'matrix' ? 'constellation' : 'matrix');
+      tLine(out, `<span class="t-out">Wallpaper set to: ${esc(currentWallpaper)}</span>`);
+      break;
 
     case 'open': {
       const appId = (args[0] || '').toLowerCase();
@@ -864,8 +1240,44 @@ function tickClock() {
 }
 
 // ════════════════════════════════
-// CANVAS WALLPAPER
+// THEME & WALLPAPER ENGINE
 // ════════════════════════════════
+const THEMES = ['cyberpunk', 'matrix', 'synthwave', 'obsidian'];
+let currentTheme = localStorage.getItem('pm_theme') || 'cyberpunk';
+let currentWallpaper = localStorage.getItem('pm_wall') || 'constellation';
+
+function setTheme(theme) {
+  if (!THEMES.includes(theme)) return;
+  currentTheme = theme;
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('pm_theme', theme);
+  playSound('click');
+  document.querySelectorAll('.theme-card').forEach(c => {
+    c.classList.toggle('active', c.getAttribute('data-theme') === theme);
+  });
+}
+
+function cycleTheme(e) {
+  if (e) e.stopPropagation();
+  const nextIdx = (THEMES.indexOf(currentTheme) + 1) % THEMES.length;
+  setTheme(THEMES[nextIdx]);
+}
+
+function setWallpaper(mode) {
+  currentWallpaper = mode;
+  localStorage.setItem('pm_wall', mode);
+  document.querySelectorAll('.wall-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-wall') === mode);
+  });
+  playSound('click');
+}
+
+// ════════════════════════════════
+// CANVAS WALLPAPER (3 MODES)
+// ════════════════════════════════
+const matrixChars = '0123456789ABCDEF0123456789@#$%&*+-/<>~ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ';
+let matrixDrops = [];
+
 function initCanvas() {
   const canvas = document.getElementById('bg-canvas');
   if (!canvas) return;
@@ -874,22 +1286,24 @@ function initCanvas() {
   function resize() {
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
+    const cols = Math.floor(canvas.width / 18);
+    matrixDrops = Array.from({ length: cols }, () => Math.floor(Math.random() * -50));
   }
   resize();
   window.addEventListener('resize', resize);
 
-  // Particles
-  const stars = Array.from({ length: 130 }, () => ({
+  // Particles for constellation & starfield
+  const stars = Array.from({ length: 120 }, () => ({
     x:       Math.random() * canvas.width,
     y:       Math.random() * canvas.height,
-    r:       Math.random() * 1.3 + 0.2,
-    alpha:   Math.random() * 0.5 + 0.06,
-    speedY: -(Math.random() * 0.25 + 0.04),
+    r:       Math.random() * 1.4 + 0.3,
+    alpha:   Math.random() * 0.5 + 0.1,
+    speedY: -(Math.random() * 0.25 + 0.05),
     speedX:  (Math.random() - 0.5) * 0.08,
     phase:   Math.random() * Math.PI * 2
   }));
 
-  // Grid (drawn once, reused as offscreen)
+  // Grid
   const gridCanvas = document.createElement('canvas');
   const gridCtx    = gridCanvas.getContext('2d');
 
@@ -905,60 +1319,664 @@ function initCanvas() {
   drawGrid();
   window.addEventListener('resize', () => { resize(); drawGrid(); });
 
-  let frame = 0;
-
   function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (currentWallpaper === 'matrix') {
+      ctx.fillStyle = 'rgba(1, 8, 1, 0.12)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00ff41';
+      ctx.font = '14px monospace';
 
-    // Ambient glow
-    const grad = ctx.createRadialGradient(
-      canvas.width * 0.5, canvas.height * 0.35, 0,
-      canvas.width * 0.5, canvas.height * 0.35, canvas.width * 0.55
-    );
-    grad.addColorStop(0, 'rgba(10,20,55,0.35)');
-    grad.addColorStop(1, 'rgba(3,8,16,0)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < matrixDrops.length; i++) {
+        const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+        ctx.fillText(char, i * 18, matrixDrops[i] * 18);
+        if (matrixDrops[i] * 18 > canvas.height && Math.random() > 0.975) {
+          matrixDrops[i] = 0;
+        }
+        matrixDrops[i]++;
+      }
+    } else if (currentWallpaper === 'stars') {
+      ctx.fillStyle = '#030611';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      stars.forEach(s => {
+        s.phase += 0.02;
+        const a = s.alpha * (0.6 + 0.4 * Math.sin(s.phase));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r * 1.2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${a})`;
+        ctx.fill();
+        s.y += s.speedY * 0.5;
+        if (s.y < 0) s.y = canvas.height;
+      });
+    } else {
+      // Default: constellation
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const grad = ctx.createRadialGradient(
+        canvas.width * 0.5, canvas.height * 0.35, 0,
+        canvas.width * 0.5, canvas.height * 0.35, canvas.width * 0.55
+      );
+      grad.addColorStop(0, 'rgba(10,20,55,0.35)');
+      grad.addColorStop(1, 'rgba(3,8,16,0)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Grid overlay
-    ctx.drawImage(gridCanvas, 0, 0);
+      ctx.drawImage(gridCanvas, 0, 0);
 
-    // Stars
-    frame++;
-    stars.forEach(s => {
-      s.phase += 0.018;
-      const a = s.alpha * (0.55 + 0.45 * Math.sin(s.phase));
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,245,255,${a})`;
-      ctx.fill();
-      s.y += s.speedY;
-      s.x += s.speedX;
-      if (s.y < 0)              { s.y = canvas.height; s.x = Math.random() * canvas.width; }
-      if (s.x < 0)              { s.x = canvas.width; }
-      if (s.x > canvas.width)   { s.x = 0; }
-    });
-
+      stars.forEach(s => {
+        s.phase += 0.018;
+        const a = s.alpha * (0.55 + 0.45 * Math.sin(s.phase));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0,245,255,${a})`;
+        ctx.fill();
+        s.y += s.speedY;
+        s.x += s.speedX;
+        if (s.y < 0)              { s.y = canvas.height; s.x = Math.random() * canvas.width; }
+        if (s.x < 0)              { s.x = canvas.width; }
+        if (s.x > canvas.width)   { s.x = 0; }
+      });
+    }
     requestAnimationFrame(draw);
   }
   draw();
 }
 
 // ════════════════════════════════
+// AUDIO & SYNTH ENGINE
+// ════════════════════════════════
+let audioCtx = null;
+let soundEnabled = true;
+let isMusicPlaying = false;
+let currentTrackIdx = 0;
+let musicInterval = null;
+
+function getAudioCtx() {
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (AudioContext) audioCtx = new AudioContext();
+  }
+  if (audioCtx && audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  return audioCtx;
+}
+
+function playSound(type) {
+  if (!soundEnabled) return;
+  try {
+    const ctx = getAudioCtx();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    if (type === 'click') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(600, now);
+      osc.frequency.exponentialRampToValueAtTime(300, now + 0.03);
+      gain.gain.setValueAtTime(0.06, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+      osc.start(now);
+      osc.stop(now + 0.03);
+    } else if (type === 'open') {
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(400, now);
+      osc.frequency.exponentialRampToValueAtTime(680, now + 0.1);
+      gain.gain.setValueAtTime(0.06, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+      osc.start(now);
+      osc.stop(now + 0.1);
+    } else if (type === 'close') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(600, now);
+      osc.frequency.exponentialRampToValueAtTime(260, now + 0.08);
+      gain.gain.setValueAtTime(0.06, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+      osc.start(now);
+      osc.stop(now + 0.08);
+    }
+  } catch (e) {}
+}
+
+function toggleSound(e) {
+  if (e) e.stopPropagation();
+  soundEnabled = !soundEnabled;
+  const btn = document.getElementById('tb-sound-btn');
+  if (btn) btn.textContent = soundEnabled ? '🔊' : '🔇';
+  const settBtn = document.getElementById('sett-sound-btn');
+  if (settBtn) settBtn.textContent = soundEnabled ? 'Enabled' : 'Muted';
+  if (!soundEnabled && isMusicPlaying) {
+    togglePlayMusic();
+  }
+  playSound('click');
+}
+
+// ════════════════════════════════
+// PROCEDURAL LO-FI AMBIENT MUSIC
+// ════════════════════════════════
+const TRACKS = [
+  {
+    title: "Midnight Lo-Fi",
+    artist: "Procedural Ambient Synth",
+    chords: [
+      [261.63, 329.63, 392.00, 493.88],
+      [220.00, 261.63, 329.63, 392.00],
+      [174.61, 220.00, 261.63, 329.63],
+      [196.00, 246.94, 293.66, 349.23]
+    ]
+  },
+  {
+    title: "Cyberpunk Drift",
+    artist: "80s Neon Highway",
+    chords: [
+      [293.66, 349.23, 440.00, 523.25],
+      [233.08, 293.66, 349.23, 440.00],
+      [196.00, 246.94, 293.66, 349.23],
+      [220.00, 277.18, 329.63, 440.00]
+    ]
+  },
+  {
+    title: "Deep Focus",
+    artist: "Sub-Bass & Chords",
+    chords: [
+      [220.00, 261.63, 329.63, 440.00],
+      [174.61, 220.00, 261.63, 349.23],
+      [130.81, 164.81, 196.00, 246.94],
+      [196.00, 246.94, 293.66, 392.00]
+    ]
+  }
+];
+
+let chordStep = 0;
+
+function playAmbientChord() {
+  if (!isMusicPlaying) return;
+  try {
+    const ctx = getAudioCtx();
+    if (!ctx) return;
+    const track = TRACKS[currentTrackIdx];
+    const notes = track.chords[chordStep % track.chords.length];
+    chordStep++;
+
+    const now = ctx.currentTime;
+    const dur = 3.6;
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(700, now);
+
+    const masterGain = ctx.createGain();
+    masterGain.gain.setValueAtTime(0.045, now);
+    masterGain.gain.linearRampToValueAtTime(0.06, now + 1.2);
+    masterGain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+    filter.connect(masterGain);
+    masterGain.connect(ctx.destination);
+
+    notes.forEach((freq, idx) => {
+      const osc = ctx.createOscillator();
+      osc.type = idx % 2 === 0 ? 'sine' : 'triangle';
+      osc.frequency.setValueAtTime(freq, now);
+      osc.detune.setValueAtTime((idx - 1.5) * 6, now);
+      osc.connect(filter);
+      osc.start(now);
+      osc.stop(now + dur);
+    });
+  } catch (e) {}
+}
+
+function togglePlayMusic() {
+  getAudioCtx();
+  isMusicPlaying = !isMusicPlaying;
+
+  const btn = document.getElementById('pl-play-btn');
+  const disc = document.getElementById('pl-disc');
+  const tbBtn = document.getElementById('tb-player-btn');
+
+  if (isMusicPlaying) {
+    if (btn) btn.textContent = '⏸';
+    if (disc) disc.classList.add('playing');
+    if (tbBtn) tbBtn.textContent = '🎶';
+    chordStep = 0;
+    playAmbientChord();
+    if (musicInterval) clearInterval(musicInterval);
+    musicInterval = setInterval(playAmbientChord, 3500);
+    startVisualizer();
+  } else {
+    if (btn) btn.textContent = '▶';
+    if (disc) disc.classList.remove('playing');
+    if (tbBtn) tbBtn.textContent = '🎵';
+    if (musicInterval) clearInterval(musicInterval);
+  }
+}
+
+function nextTrack() {
+  currentTrackIdx = (currentTrackIdx + 1) % TRACKS.length;
+  updatePlayerUI();
+  if (isMusicPlaying) {
+    chordStep = 0;
+    playAmbientChord();
+  }
+  playSound('click');
+}
+
+function prevTrack() {
+  currentTrackIdx = (currentTrackIdx - 1 + TRACKS.length) % TRACKS.length;
+  updatePlayerUI();
+  if (isMusicPlaying) {
+    chordStep = 0;
+    playAmbientChord();
+  }
+  playSound('click');
+}
+
+function updatePlayerUI() {
+  const tr = TRACKS[currentTrackIdx];
+  const tEl = document.getElementById('pl-title');
+  const aEl = document.getElementById('pl-artist');
+  if (tEl) tEl.textContent = tr.title;
+  if (aEl) aEl.textContent = tr.artist;
+}
+
+function initPlayer() {
+  startVisualizer();
+}
+
+function startVisualizer() {
+  const canvas = document.getElementById('player-vis');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const bars = 28;
+
+  function render() {
+    if (!document.getElementById('player-vis')) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < bars; i++) {
+      const h = isMusicPlaying
+        ? Math.floor(Math.sin(Date.now() * 0.005 + i * 0.4) * 18 + Math.random() * 22 + 10)
+        : 4;
+      const x = i * (canvas.width / bars) + 2;
+      const w = (canvas.width / bars) - 4;
+      const y = canvas.height - h;
+
+      const grad = ctx.createLinearGradient(0, y, 0, canvas.height);
+      grad.addColorStop(0, '#00f5ff');
+      grad.addColorStop(1, 'rgba(168,85,247,0.4)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(x, y, w, h);
+    }
+    requestAnimationFrame(render);
+  }
+  render();
+}
+
+// ════════════════════════════════
+// RETRO SNAKE ARCADE GAME
+// ════════════════════════════════
+let snakeLoop = null;
+let snake = [];
+let food = { x: 10, y: 10 };
+let snakeDir = { x: 1, y: 0 };
+let nextDir = { x: 1, y: 0 };
+let snakeScore = 0;
+let snakeBest = parseInt(localStorage.getItem('pm_snake_best') || '0', 10);
+const GRID_SIZE = 16;
+const TILE_COUNT = 20;
+
+function initSnake() {
+  const canvas = document.getElementById('snake-canvas');
+  if (!canvas) return;
+  const bestEl = document.getElementById('snake-best');
+  if (bestEl) bestEl.textContent = snakeBest;
+  restartSnake();
+  window.addEventListener('keydown', handleSnakeKeys);
+}
+
+function handleSnakeKeys(e) {
+  if (!document.getElementById('win-snake')) return;
+  if (['ArrowUp', 'KeyW'].includes(e.code) && snakeDir.y === 0) { nextDir = { x: 0, y: -1 }; e.preventDefault(); }
+  if (['ArrowDown', 'KeyS'].includes(e.code) && snakeDir.y === 0) { nextDir = { x: 0, y: 1 }; e.preventDefault(); }
+  if (['ArrowLeft', 'KeyA'].includes(e.code) && snakeDir.x === 0) { nextDir = { x: -1, y: 0 }; e.preventDefault(); }
+  if (['ArrowRight', 'KeyD'].includes(e.code) && snakeDir.x === 0) { nextDir = { x: 1, y: 0 }; e.preventDefault(); }
+}
+
+function changeSnakeDir(x, y) {
+  if (x !== 0 && snakeDir.x === 0) nextDir = { x, y: 0 };
+  if (y !== 0 && snakeDir.y === 0) nextDir = { x: 0, y };
+  playSound('click');
+}
+
+function restartSnake() {
+  snake = [
+    { x: 8, y: 10 },
+    { x: 7, y: 10 },
+    { x: 6, y: 10 }
+  ];
+  snakeDir = { x: 1, y: 0 };
+  nextDir  = { x: 1, y: 0 };
+  snakeScore = 0;
+  const scoreEl = document.getElementById('snake-score');
+  if (scoreEl) scoreEl.textContent = '0';
+  spawnFood();
+
+  if (snakeLoop) clearInterval(snakeLoop);
+  snakeLoop = setInterval(updateSnake, 110);
+}
+
+function spawnFood() {
+  food = {
+    x: Math.floor(Math.random() * TILE_COUNT),
+    y: Math.floor(Math.random() * TILE_COUNT)
+  };
+}
+
+function updateSnake() {
+  const canvas = document.getElementById('snake-canvas');
+  if (!canvas) {
+    if (snakeLoop) clearInterval(snakeLoop);
+    return;
+  }
+  const ctx = canvas.getContext('2d');
+
+  snakeDir = nextDir;
+  const head = { x: snake[0].x + snakeDir.x, y: snake[0].y + snakeDir.y };
+
+  if (head.x < 0) head.x = TILE_COUNT - 1;
+  if (head.x >= TILE_COUNT) head.x = 0;
+  if (head.y < 0) head.y = TILE_COUNT - 1;
+  if (head.y >= TILE_COUNT) head.y = 0;
+
+  for (let segment of snake) {
+    if (segment.x === head.x && segment.y === head.y) {
+      playSound('close');
+      restartSnake();
+      return;
+    }
+  }
+
+  snake.unshift(head);
+
+  if (head.x === food.x && head.y === food.y) {
+    snakeScore += 10;
+    playSound('click');
+    const scoreEl = document.getElementById('snake-score');
+    if (scoreEl) scoreEl.textContent = snakeScore;
+    if (snakeScore > snakeBest) {
+      snakeBest = snakeScore;
+      localStorage.setItem('pm_snake_best', snakeBest);
+      const bestEl = document.getElementById('snake-best');
+      if (bestEl) bestEl.textContent = snakeBest;
+    }
+    spawnFood();
+  } else {
+    snake.pop();
+  }
+
+  ctx.fillStyle = '#02060f';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.strokeStyle = 'rgba(0,245,255,0.04)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < TILE_COUNT; i++) {
+    ctx.beginPath(); ctx.moveTo(i * GRID_SIZE, 0); ctx.lineTo(i * GRID_SIZE, canvas.height); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0, i * GRID_SIZE); ctx.lineTo(canvas.width, i * GRID_SIZE); ctx.stroke();
+  }
+
+  ctx.fillStyle = '#ff71ce';
+  ctx.shadowColor = '#ff71ce';
+  ctx.shadowBlur = 10;
+  ctx.fillRect(food.x * GRID_SIZE + 2, food.y * GRID_SIZE + 2, GRID_SIZE - 4, GRID_SIZE - 4);
+
+  snake.forEach((seg, idx) => {
+    ctx.fillStyle = idx === 0 ? '#00f5ff' : '#00ff41';
+    ctx.shadowColor = idx === 0 ? '#00f5ff' : '#00ff41';
+    ctx.shadowBlur = idx === 0 ? 12 : 5;
+    ctx.fillRect(seg.x * GRID_SIZE + 1, seg.y * GRID_SIZE + 1, GRID_SIZE - 2, GRID_SIZE - 2);
+  });
+  ctx.shadowBlur = 0;
+}
+
+// ════════════════════════════════
+// PM-BOT (ASK PRAKHAR AI)
+// ════════════════════════════════
+function initAI() {
+  const inp = document.getElementById('ai-user-inp');
+  if (inp) inp.focus();
+}
+
+function askAIChip(text) {
+  const inp = document.getElementById('ai-user-inp');
+  if (inp) {
+    inp.value = text;
+    sendAIMessage();
+  }
+}
+
+function sendAIMessage() {
+  const inp = document.getElementById('ai-user-inp');
+  if (!inp) return;
+  const q = inp.value.trim();
+  if (!q) return;
+  inp.value = '';
+
+  const msgList = document.getElementById('ai-msg-list');
+  if (!msgList) return;
+
+  const userMsg = document.createElement('div');
+  userMsg.className = 'ai-msg user';
+  userMsg.innerHTML = `<div class="ai-bubble">${esc(q)}</div>`;
+  msgList.appendChild(userMsg);
+  msgList.scrollTop = msgList.scrollHeight;
+
+  playSound('click');
+
+  setTimeout(() => {
+    const reply = getAIResponse(q);
+    const botMsg = document.createElement('div');
+    botMsg.className = 'ai-msg bot';
+    botMsg.innerHTML = `<div class="ai-bubble">${reply}</div>`;
+    msgList.appendChild(botMsg);
+    msgList.scrollTop = msgList.scrollHeight;
+    playSound('open');
+  }, 350);
+}
+
+function getAIResponse(query) {
+  const q = query.toLowerCase();
+
+  if (q.includes('project') || q.includes('work') || q.includes('built')) {
+    return `Prakhar has engineered impactful full-stack and AI projects:
+    <br><br>
+    🌱 <b>KrishiGyan:</b> Smart agriculture platform with 94% crop disease detection accuracy, multi-lingual audio advisories, and direct trade mandi connectivity. (<a href="https://krishi-gyan-five.vercel.app/" target="_blank" style="color:var(--accent);">Live Demo</a> · <a href="https://github.com/Prakhar1903/KrishiGyan" target="_blank" style="color:var(--accent);">GitHub</a>)
+    <br><br>
+    🎙️ <b>Mockneto:</b> Real-time AI mock interview platform featuring speech transcription, facial sentiment analysis, and instant scoring rubrics via Gemini AI API. (<a href="https://github.com/Prakhar1903/MOCKNETO" target="_blank" style="color:var(--accent);">GitHub</a>)
+    <br><br>
+    🏋️ <b>VirtuGym:</b> Computer vision fitness coach using OpenCV &amp; MediaPipe for 33-point joint tracking and posture correction. (<a href="https://github.com/Prakhar1903/Virtugym" target="_blank" style="color:var(--accent);">GitHub</a>)`;
+  }
+
+  if (q.includes('intern') || q.includes('experience') || q.includes('upstride') || q.includes('infosys')) {
+    return `Prakhar has completed 3 internships:
+    <br><br>
+    🚀 <b>UpStride (Full Stack Dev Intern · Apr–Jun 2026):</b> Worked on WeTano Engage AI Fork, cutting AI latency by 35% with LangChain &amp; Milvus vector DB RAG, building FastAPI microservices &amp; Next.js interfaces.
+    <br><br>
+    📊 <b>Infosys Springboard (AI/ML Intern · Feb–Apr 2026):</b> Built <b>Market Trend Forecaster</b> with 89% directional accuracy using LSTM &amp; XGBoost over 5+ years of stock data with live charts.
+    <br><br>
+    🌐 <b>WebStack Academy (MERN Intern · Dec 2025–Jan 2026):</b> Developed full-stack React/Node.js web apps with JWT auth and MongoDB aggregations.`;
+  }
+
+  if (q.includes('skill') || q.includes('stack') || q.includes('tech') || q.includes('language')) {
+    return `Prakhar's core technical stack includes:
+    <br><br>
+    • <b>Languages:</b> Python, JavaScript, TypeScript, C++, Java, SQL<br>
+    • <b>Frontend:</b> React.js, Next.js, Tailwind CSS, Redux, HTML5/CSS3<br>
+    • <b>Backend:</b> Node.js, Express.js, FastAPI, RESTful APIs<br>
+    • <b>AI &amp; ML:</b> TensorFlow, PyTorch, Scikit-learn, LangChain, Milvus RAG, MediaPipe, OpenCV, Gemini API<br>
+    • <b>Databases &amp; DevOps:</b> MongoDB, PostgreSQL, Docker, Git/GitHub, Linux`;
+  }
+
+  if (q.includes('why') || q.includes('hire') || q.includes('reason') || q.includes('select')) {
+    return `Here is why Prakhar is an exceptional hire:
+    <br><br>
+    1. <b>Proven End-to-End Delivery:</b> Builds production full-stack systems from vector DB retrieval to interactive Next.js frontends.<br>
+    2. <b>Real-World Internship Experience:</b> Delivered high-impact features at UpStride, Infosys Springboard, and WebStack Academy.<br>
+    3. <b>Strong Algorithmic Foundation:</b> 250+ solved problems across LeetCode &amp; HackerRank, 5-star HackerRank badges in Java and C++, and 8.12 CGPA at LPU.<br>
+    4. <b>Fast Adaptability:</b> Quickly adopts bleeding-edge AI tooling (CrewAI, LangChain, Milvus, WebRTC, Gemini).`;
+  }
+
+  if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('reach')) {
+    return `You can reach Prakhar directly via:
+    <br><br>
+    📧 <b>Email:</b> <a href="mailto:prakharm1903@gmail.com" style="color:var(--accent);">prakharm1903@gmail.com</a><br>
+    📱 <b>Phone:</b> +91 7869691849<br>
+    💼 <b>LinkedIn:</b> <a href="https://linkedin.com/in/prakharm1903" target="_blank" style="color:var(--accent);">linkedin.com/in/prakharm1903</a><br>
+    ⚡ <b>GitHub:</b> <a href="https://github.com/Prakhar1903" target="_blank" style="color:var(--accent);">github.com/Prakhar1903</a>`;
+  }
+
+  return `Thanks for asking! Prakhar is a B.Tech CSE student at Lovely Professional University (CGPA: 8.12) with experience in Full-Stack Development and AI/ML. You can explore his <a href="javascript:openApp('resume')" style="color:var(--accent);">Resume.exe</a>, test his <a href="javascript:openApp('projects')" style="color:var(--accent);">Projects/</a>, or connect on <a href="https://linkedin.com/in/prakharm1903" target="_blank" style="color:var(--accent);">LinkedIn</a>!`;
+}
+
+// ════════════════════════════════
+// START MENU ENGINE
+// ════════════════════════════════
+function toggleStartMenu(e) {
+  if (e) e.stopPropagation();
+  const sm = document.getElementById('start-menu');
+  if (!sm) return;
+  const isShown = sm.style.display === 'flex';
+
+  const cf = document.getElementById('calendar-flyout');
+  if (cf) cf.style.display = 'none';
+
+  sm.style.display = isShown ? 'none' : 'flex';
+  if (!isShown) {
+    playSound('open');
+    updateUptime();
+    const searchInp = document.getElementById('sm-search');
+    if (searchInp) {
+      searchInp.value = '';
+      filterStartApps('');
+      searchInp.focus();
+    }
+  } else {
+    playSound('close');
+  }
+}
+
+function filterStartApps(query) {
+  const q = query.toLowerCase().trim();
+  const items = document.querySelectorAll('.sm-item');
+  items.forEach(it => {
+    const text = it.textContent.toLowerCase();
+    it.style.display = text.includes(q) ? 'flex' : 'none';
+  });
+}
+
+// ════════════════════════════════
+// CALENDAR & SYSTEM FLYOUT
+// ════════════════════════════════
+function toggleCalendar(e) {
+  if (e) e.stopPropagation();
+  const cf = document.getElementById('calendar-flyout');
+  if (!cf) return;
+  const isShown = cf.style.display === 'flex';
+
+  const sm = document.getElementById('start-menu');
+  if (sm) sm.style.display = 'none';
+
+  cf.style.display = isShown ? 'none' : 'flex';
+  if (!isShown) {
+    playSound('open');
+    renderCalendar();
+  } else {
+    playSound('close');
+  }
+}
+
+function renderCalendar() {
+  const calGrid = document.getElementById('cf-cal-grid');
+  const cfTime  = document.getElementById('cf-time');
+  const cfDate  = document.getElementById('cf-date-full');
+  if (!calGrid) return;
+
+  const now = new Date();
+  if (cfTime) cfTime.textContent = now.toLocaleTimeString();
+  if (cfDate) cfDate.textContent = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' });
+
+  const year  = now.getFullYear();
+  const month = now.getMonth();
+  const today = now.getDate();
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  let html = '';
+  const days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+  days.forEach(d => { html += `<div class="cf-day-name">${d}</div>`; });
+
+  for (let i = 0; i < firstDay; i++) {
+    html += `<div class="cf-day-cell other-month"></div>`;
+  }
+  for (let d = 1; d <= daysInMonth; d++) {
+    const isToday = d === today;
+    html += `<div class="cf-day-cell ${isToday ? 'cf-today' : ''}">${d}</div>`;
+  }
+  calGrid.innerHTML = html;
+
+  const cpuVal = document.getElementById('cf-cpu-val');
+  const cpuFill = document.getElementById('cf-cpu-fill');
+  if (cpuVal && cpuFill) {
+    const pct = Math.floor(10 + Math.random() * 14);
+    cpuVal.textContent = pct + '%';
+    cpuFill.style.width = pct + '%';
+  }
+}
+
+// ════════════════════════════════
+// UPTIME & SYSTEM REBOOT
+// ════════════════════════════════
+const bootTime = Date.now();
+function updateUptime() {
+  const el = document.getElementById('sm-uptime');
+  if (!el) return;
+  const sec = Math.floor((Date.now() - bootTime) / 1000);
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  const h = Math.floor(m / 60);
+  el.textContent = `Uptime: ${h}h ${m % 60}m ${s}s`;
+}
+
+function rebootSystem() {
+  playSound('close');
+  const sm = document.getElementById('start-menu');
+  if (sm) sm.style.display = 'none';
+  closeAllWins();
+  const desk = document.getElementById('desktop');
+  const bs = document.getElementById('boot-screen');
+  desk.style.display = 'none';
+  bs.style.display = 'flex';
+  bs.style.opacity = '1';
+  document.getElementById('boot-log').innerHTML = '';
+  document.getElementById('boot-bar').style.width = '0%';
+  setTimeout(boot, 400);
+}
+
+// ════════════════════════════════
 // BOOT SEQUENCE
 // ════════════════════════════════
 const BOOT_LINES = [
-  '[  0.001]  BIOS:   PM-OS Portfolio System v1.0',
+  '[  0.001]  BIOS:   PM-OS Portfolio System v2.0',
   '[  0.024]  CPU:    Full-Stack Core @ 8.12 GHz',
   '[  0.046]  MEM:    Loaded 250+ DSA algorithms',
   '[  0.091]  DISK:   Mounting /home/prakhar ...',
   '[  0.134]  NET:    Bridging LinkedIn · GitHub · Gmail',
-  '[  0.267]  AI:     Loading CrewAI neural modules ...',
+  '[  0.267]  AI:     Loading CrewAI & LangChain modules ...',
   '[  0.401]  SVC:    Starting React 18 render engine',
   '[  0.544]  SVC:    Launching FastAPI backend services',
   '[  0.678]  AUTH:   JWT security layer initialized',
-  '[  0.812]  DB:     MongoDB connection established',
-  '[  0.995]  SYS:    All systems nominal. Welcome! 🚀',
+  '[  0.812]  DB:     MongoDB & Milvus connection established',
+  '[  0.995]  SYS:    All systems nominal. Welcome to PM-OS v2.0! 🚀',
 ];
 
 function boot() {
@@ -968,7 +1986,6 @@ function boot() {
 
   function step() {
     if (i >= BOOT_LINES.length) {
-      // Transition to desktop
       setTimeout(() => {
         const bs = document.getElementById('boot-screen');
         bs.style.transition = 'opacity 0.65s ease';
@@ -983,10 +2000,8 @@ function boot() {
           initCanvas();
           tickClock();
           setInterval(tickClock, 15000);
-          // Auto-open welcome windows
           setTimeout(() => openApp('about'),    450);
           setTimeout(() => openApp('terminal'), 900);
-          // Hide hint after 5s
           setTimeout(() => {
             const h = document.getElementById('hint-overlay');
             if (h) h.style.display = 'none';
@@ -998,56 +2013,85 @@ function boot() {
 
     const line = document.createElement('div');
     line.className = 'boot-log-line';
-    // Color the timestamp bracket
     const colored = BOOT_LINES[i]
       .replace(/\[(.+?)\]/, '<span style="color:#1a4a1a">[$1]</span>');
-    line.innerHTML = colored + (i === BOOT_LINES.length - 1 ? '' : '');
+    line.innerHTML = colored;
     logBox.appendChild(line);
     logBox.scrollTop = logBox.scrollHeight;
     bar.style.width = ((i + 1) / BOOT_LINES.length * 100) + '%';
     i++;
-    setTimeout(step, 150 + Math.random() * 90);
+    setTimeout(step, 140 + Math.random() * 80);
   }
 
-  setTimeout(step, 500);
+  setTimeout(step, 450);
 }
 
 // ════════════════════════════════
-// ICON SELECTION
+// ICON SELECTION & TOUCH HELPER
 // ════════════════════════════════
 function selectIcon(el) {
   document.querySelectorAll('.d-icon').forEach(i => i.classList.remove('selected'));
   el.classList.add('selected');
 }
 
+function handleIconClick(el, appId) {
+  selectIcon(el);
+  playSound('click');
+  if (window.innerWidth <= 768) {
+    openApp(appId);
+  }
+}
+
 // ════════════════════════════════
 // CONTEXT MENU
 // ════════════════════════════════
 function hideCtx() {
-  document.getElementById('ctx-menu').style.display = 'none';
+  const ctx = document.getElementById('ctx-menu');
+  if (ctx) ctx.style.display = 'none';
 }
 
 // ════════════════════════════════
 // INIT
 // ════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
+  // Restore saved theme
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
   boot();
 
   const ctx = document.getElementById('ctx-menu');
 
   // Right-click on desktop only
   document.getElementById('desktop')?.addEventListener('contextmenu', e => {
-    if (e.target.closest('.os-window') || e.target.closest('#taskbar') || e.target.closest('#icon-grid')) return;
+    if (e.target.closest('.os-window') || e.target.closest('#taskbar') || e.target.closest('#icon-grid') || e.target.closest('#start-menu') || e.target.closest('#calendar-flyout')) return;
     e.preventDefault();
-    ctx.style.display = 'block';
-    const x = Math.min(e.clientX, window.innerWidth  - ctx.offsetWidth  - 8);
-    const y = Math.min(e.clientY, window.innerHeight - ctx.offsetHeight - 55);
-    ctx.style.left = x + 'px';
-    ctx.style.top  = y + 'px';
+    if (ctx) {
+      ctx.style.display = 'block';
+      const x = Math.min(e.clientX, window.innerWidth  - ctx.offsetWidth  - 8);
+      const y = Math.min(e.clientY, window.innerHeight - ctx.offsetHeight - 55);
+      ctx.style.left = x + 'px';
+      ctx.style.top  = y + 'px';
+    }
   });
 
-  // Hide ctx on any click
-  document.addEventListener('click', hideCtx);
+  // Global click dismissals
+  document.addEventListener('click', e => {
+    hideCtx();
+
+    // Dismiss start menu if clicked outside
+    const sm = document.getElementById('start-menu');
+    const tbStart = document.getElementById('tb-start-btn');
+    if (sm && sm.style.display === 'flex' && !sm.contains(e.target) && e.target !== tbStart && !tbStart?.contains(e.target)) {
+      sm.style.display = 'none';
+    }
+
+    // Dismiss calendar if clicked outside
+    const cf = document.getElementById('calendar-flyout');
+    const tbClock = document.getElementById('tb-clock');
+    if (cf && cf.style.display === 'flex' && !cf.contains(e.target) && e.target !== tbClock && !tbClock?.contains(e.target)) {
+      cf.style.display = 'none';
+    }
+  });
 
   // Deselect icons on desktop click
   document.getElementById('desktop')?.addEventListener('click', e => {
@@ -1064,3 +2108,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
